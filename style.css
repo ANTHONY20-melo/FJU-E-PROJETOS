@@ -552,12 +552,12 @@ footer { padding: 50px 10%; background: #002244; color: #fff; text-align: center
    ========================================================== */
 
 .page-esportes {
-    background-color: #f5fdf5; /* Fundo levemente esverdeado */
-    color: #333;
+    background-color: #e4e4e4e0; /* Fundo levemente esverdeado */
+    color: #474747;
 }
 
 .page-esportes header {
-    background-color: rgba(34, 139, 34, 0.95); /* Verde Forest */
+    background-color: rgba(38, 138, 38, 0.95); /* Verde Forest */
     border-bottom: 3px solid #32CD32; /* Verde Lima */
     padding: 15px 10%;
     position: fixed;
@@ -584,8 +584,8 @@ footer { padding: 50px 10%; background: #002244; color: #fff; text-align: center
     align-items: center;
     justify-content: center;
     text-align: center;
-    background: linear-gradient(rgba(0, 50, 0, 0.7), rgba(0, 50, 0, 0.7)), url('img/maxresdefault.jpg') center/cover;
-    color: #fff;
+    background: linear-gradient(rgba(0, 50, 0, 0.7), rgba(1, 59, 1, 0.7)), url('img/maxresdefault.jpg') center/cover;
+    color: #ffffff;
 }
 
 .page-esportes .hero h1 span { color: #32CD32; }
@@ -612,7 +612,7 @@ footer { padding: 50px 10%; background: #002244; color: #fff; text-align: center
 
 /* Cards Esportes */
 .page-esportes .card {
-    background: #fff;
+    background: #ffffff;
     border-bottom: 4px solid #228B22;
     padding: 40px 20px;
     box-shadow: 0 5px 15px rgba(0,0,0,0.05);
@@ -625,7 +625,7 @@ footer { padding: 50px 10%; background: #002244; color: #fff; text-align: center
     width: 100%;
     padding: 15px;
     background: #228B22;
-    color: #fff;
+    color: #ffffff;
     border: none;
     font-weight: bold;
     cursor: pointer;
@@ -680,4 +680,122 @@ footer { padding: 50px 10%; background: #002244; color: #fff; text-align: center
     .page-assistentes .galeria-grid {
         column-count: 2;
     }
+}
+/* ==========================================================
+   ESTILO EXCLUSIVO MÍDIA (AZUL ESCURO E BRANCO)
+   ========================================================== */
+
+.page-midia {
+    background-color: #f0f4f8;
+    color: #1a2a3a;
+}
+
+.page-midia header {
+    background-color: rgba(0, 51, 102, 0.95); /* Azul FJU */
+    border-bottom: 3px solid #00aaff; /* Azul claro */
+    padding: 15px 10%;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+}
+
+.page-midia nav ul li a:hover {
+    color: #00aaff;
+}
+
+.page-midia .btn-nav {
+    background-color: #00aaff;
+    color: #fff !important;
+    padding: 8px 20px;
+    border-radius: 5px;
+    font-weight: bold;
+}
+
+.page-midia .hero {
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    background: linear-gradient(rgba(0, 30, 60, 0.8), rgba(0, 30, 60, 0.8)), url('img/maxresdefault\ \(1\).jpg') center/cover;
+    color: #fff;
+}
+
+.page-midia .hero h1 span { color: #00aaff; }
+
+.page-midia .btn-principal {
+    background-color: #00aaff;
+    color: #fff;
+    padding: 15px 40px;
+    text-decoration: none;
+    font-weight: bold;
+    border-radius: 30px;
+    display: inline-block;
+    margin-top: 25px;
+}
+
+.page-midia .titulo-azul-midia { 
+    color: #003366; 
+    font-size: 2.5rem; 
+    margin-bottom: 20px; 
+    text-transform: uppercase; 
+}
+
+.page-midia .bg-light-blue-midia { background-color: #e1f5fe; }
+
+/* Galeria Padronizada (Igual ao Cultura) */
+.page-midia .galeria-grid {
+    column-count: 3;
+    column-gap: 15px;
+    margin-top: 30px;
+}
+
+.page-midia .foto-item { 
+    display: inline-block;
+    width: 100%;
+    margin-bottom: 15px;
+    border-radius: 10px; 
+    overflow: hidden; 
+    border: 1px solid #ccc;
+}
+
+.page-midia .foto-item img {
+    width: 100%; 
+    height: auto;
+    display: block;
+    filter: grayscale(100%); 
+    transition: 0.5s ease-in-out;
+}
+
+.page-midia .foto-item:hover img { 
+    filter: grayscale(0%); 
+    transform: scale(1.03);
+}
+
+/* Cards Mídia */
+.page-midia .card {
+    background: #fff;
+    border-bottom: 4px solid #003366;
+    padding: 40px 20px;
+}
+
+.page-midia .card i { font-size: 2.5rem; color: #003366; margin-bottom: 15px; }
+
+/* Botão Enviar Mídia */
+.page-midia .btn-enviar-midia {
+    width: 100%;
+    padding: 15px;
+    background: #003366;
+    color: #fff;
+    border: none;
+    font-weight: bold;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+.page-midia footer { background: #001a33; color: #fff; padding: 50px; text-align: center; }
+
+@media (max-width: 768px) {
+    .page-midia .galeria-grid { column-count: 2; }
 }
