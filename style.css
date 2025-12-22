@@ -1,3 +1,9 @@
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
 * { 
     margin: 0; 
     padding: 0; 
@@ -1446,3 +1452,79 @@ footer { padding: 50px 10%; background: #002244; color: #fff; text-align: center
 }
 
 .page-atalaia footer { background: #001a35; color: #fff; padding: 30px; text-align: center; }
+/* ==========================================================
+   REGRAS DE RESPONSIVIDADE (PARA CELULARES)
+   ========================================================== */
+
+@media (max-width: 768px) {
+    /* Ajuste do Header e Menu */
+    header nav {
+        flex-direction: column;
+        padding: 10px;
+    }
+
+    header nav ul {
+        display: flex;
+        flex-wrap: wrap; /* Faz o menu quebrar linha se não couber */
+        justify-content: center;
+        gap: 10px;
+        margin-top: 10px;
+        padding: 0;
+    }
+
+    header nav ul li a {
+        font-size: 0.9rem;
+    }
+
+    /* Hero Section (Início) */
+    .hero h1 {
+        font-size: 2rem; /* Diminui o título para não cortar */
+    }
+
+    .hero-content img.logo-central {
+        width: 150px; /* Logo menor no celular */
+    }
+
+    /* Cards de Projetos */
+    .cards-container {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(140px, 1fr)); /* 2 colunas no celular */
+        gap: 15px;
+        padding: 10px;
+    }
+
+    .card {
+        padding: 20px 10px;
+    }
+
+    .card i {
+        font-size: 1.8rem;
+    }
+
+    /* Seção de Horários */
+    .horarios-grid {
+        grid-template-columns: 1fr; /* Horários um abaixo do outro */
+    }
+
+    /* Formulário */
+    .form-box {
+        width: 95%;
+        padding: 20px;
+    }
+
+    /* Seção de Ajuda (HELP) */
+    .bg-help {
+        padding: 30px 15px;
+    }
+    
+    .logo-help {
+        width: 100px;
+    }
+}
+
+/* Ajuste para telas muito pequenas (iPhone SE, etc) */
+@media (max-width: 400px) {
+    .cards-container {
+        grid-template-columns: 1fr; /* 1 coluna apenas para não espremer */
+    }
+}
