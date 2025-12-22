@@ -226,7 +226,7 @@ footer { padding: 50px 10%; background: #002244; color: #fff; text-align: center
     align-items: center;
     justify-content: center;
     text-align: center;
-    background: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0,0,0,0.8)), url('https://images.unsplash.com/photo-1492684223066-81342ee5ff30?q=80&w=1470') center/cover;
+    background: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0,0,0,0.8)), url('img/maxresdefault\ \(2\).jpg') center/cover;
     padding: 0 20px;
 }
 
@@ -798,4 +798,542 @@ footer { padding: 50px 10%; background: #002244; color: #fff; text-align: center
 
 @media (max-width: 768px) {
     .page-midia .galeria-grid { column-count: 2; }
+}
+/* ==========================================================
+   ESTILO EXCLUSIVO ARCANJOS (AZUL CHUMBO E CINZA/BRANCO)
+   ========================================================== */
+
+.page-arcanjos {
+    background-color: #eef2f5; /* Fundo cinza bem claro */
+    color: #333;
+}
+
+.page-arcanjos header {
+    background-color: rgba(42, 129, 216, 0.95); /* Azul chumbo */
+    border-bottom: 3px solid #6699cc; /* Azul aço */
+    padding: 15px 10%;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+}
+
+.page-arcanjos nav ul li a:hover {
+    color: #6699cc;
+}
+
+.page-arcanjos .btn-nav {
+    background-color: #6699cc;
+    color: #fff !important;
+    padding: 8px 20px;
+    border-radius: 5px;
+    font-weight: bold;
+}
+
+.page-arcanjos .hero {
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    background: linear-gradient(rgba(20, 30, 40, 0.8), rgba(20, 30, 40, 0.8)), url('img/maxresdefault\ \(3\).jpg') center/cover; /* Imagem de fundo */
+    color: #fff;
+}
+
+.page-arcanjos .hero h1 span { color: #6699cc; }
+
+.page-arcanjos .btn-principal {
+    background-color: #6699cc;
+    color: #fff;
+    padding: 15px 40px;
+    text-decoration: none;
+    font-weight: bold;
+    border-radius: 30px;
+    display: inline-block;
+    margin-top: 25px;
+}
+
+.page-arcanjos .titulo-arcanjos { 
+    color: #1e2832; /* Azul chumbo escuro */
+    font-size: 2.5rem; 
+    margin-bottom: 20px; 
+    text-transform: uppercase; 
+}
+
+.page-arcanjos .bg-arcanjos-claro { background-color: #f8fbfd; } /* Fundo muito claro */
+
+/* Galeria Padronizada (Igual ao Cultura) */
+.page-arcanjos .galeria-grid {
+    column-count: 3;
+    column-gap: 15px;
+    margin-top: 30px;
+}
+
+.page-arcanjos .foto-item { 
+    display: inline-block;
+    width: 100%;
+    margin-bottom: 15px;
+    border-radius: 10px; 
+    overflow: hidden; 
+    border: 1px solid #ddd;
+}
+
+.page-arcanjos .foto-item img {
+    width: 100%; 
+    height: auto;
+    display: block;
+    filter: grayscale(100%); 
+    transition: 0.5s ease-in-out;
+}
+
+.page-arcanjos .foto-item:hover img { 
+    filter: grayscale(0%); 
+    transform: scale(1.03);
+}
+
+/* Cards Arcanjos */
+.page-arcanjos .card {
+    background: #fff;
+    border-bottom: 4px solid #1e2832;
+    padding: 40px 20px;
+}
+
+.page-arcanjos .card i { font-size: 2.5rem; color: #1e2832; margin-bottom: 15px; }
+
+/* Botão Enviar Arcanjos */
+.page-arcanjos .btn-enviar-arcanjos {
+    width: 100%;
+    padding: 15px;
+    background: #1e2832;
+    color: #fff;
+    border: none;
+    font-weight: bold;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+.page-arcanjos footer { background: #0f1a23; color: #fff; padding: 50px; text-align: center; }
+
+@media (max-width: 768px) {
+    .page-arcanjos .galeria-grid { column-count: 2; }
+}
+/* ==========================================================
+   ESTILO CORRIGIDO: UNIVERSITÁRIOS (VERMELHO E PRETO)
+   ========================================================== */
+
+/* Cor de fundo da página e texto principal */
+.page-universitarios {
+    background-color: #ffffff;
+    color: #1a1a1a;
+}
+
+/* Header com fundo preto e borda inferior vermelha conforme o logo */
+.page-universitarios header {
+    background-color: rgba(0, 0, 0, 0.95); 
+    border-bottom: 3px solid #ed1c24; /* Vermelho FJU */
+    padding: 15px 10%;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+}
+
+/* Links do menu */
+.page-universitarios nav ul li a:hover {
+    color: #ed1c24;
+}
+
+/* Botão de destaque no menu */
+.page-universitarios .btn-nav {
+    background-color: #ed1c24;
+    color: #fff !important;
+    padding: 8px 20px;
+    border-radius: 5px;
+    font-weight: bold;
+}
+
+/* Seção Hero com overlay escuro para destacar o texto */
+.page-universitarios .hero {
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    background: linear-gradient(rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0.85)), 
+                url('img/hq720.jpg') center/cover;
+    color: #fff;
+}
+
+/* Destaque em vermelho no título do Hero */
+.page-universitarios .hero h1 span { 
+    color: #ed1c24; 
+}
+
+/* Botão principal da página */
+.page-universitarios .btn-principal {
+    background-color: #ed1c24;
+    color: #fff;
+    padding: 15px 40px;
+    text-decoration: none;
+    font-weight: bold;
+    border-radius: 30px;
+    display: inline-block;
+    margin-top: 25px;
+    transition: 0.3s;
+}
+
+.page-universitarios .btn-principal:hover {
+    background-color: #b31217;
+    transform: scale(1.05);
+}
+
+/* Títulos das seções em vermelho */
+.page-universitarios .titulo-uni-vermelho { 
+    color: #ed1c24; 
+    font-size: 2.5rem; 
+    margin-bottom: 20px; 
+    text-transform: uppercase; 
+}
+
+/* Fundo claro para seções de destaque (Tom leve de vermelho/rosa) */
+.page-universitarios .bg-uni-vermelho-claro { 
+    background-color: #fff5f5; 
+}
+
+/* Estilização dos Cards */
+.page-universitarios .card {
+    background: #fff;
+    border-bottom: 4px solid #ed1c24;
+    padding: 40px 20px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+}
+
+.page-universitarios .card i { 
+    font-size: 2.5rem; 
+    color: #ed1c24; 
+    margin-bottom: 15px; 
+}
+
+/* Galeria com efeito P&B (igual ao Cultura) */
+.page-universitarios .galeria-grid {
+    column-count: 3;
+    column-gap: 15px;
+    margin-top: 30px;
+}
+
+.page-universitarios .foto-item img {
+    width: 100%;
+    filter: grayscale(100%);
+    transition: 0.5s ease-in-out;
+    border-radius: 10px;
+}
+
+.page-universitarios .foto-item:hover img {
+    filter: grayscale(0%);
+    transform: scale(1.02);
+}
+
+/* Botão de envio do formulário */
+.page-universitarios .btn-enviar-uni {
+    width: 100%;
+    padding: 15px;
+    background: #1a1a1a;
+    color: #fff;
+    border: none;
+    font-weight: bold;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: 0.3s;
+}
+
+.page-universitarios .btn-enviar-uni:hover {
+    background-color: #ed1c24;
+}
+
+/* Rodapé escuro */
+.page-universitarios footer { 
+    background: #000000; 
+    color: #fff; 
+    padding: 50px; 
+    text-align: center; 
+}
+/* ==========================================================
+   ESTILO UNIFORÇA (AMARELO OURO E PRETO)
+   ========================================================== */
+
+.page-uniforca {
+    background-color: #ffffff;
+    color: #000000;
+}
+
+/* Header com as cores do logo */
+.page-uniforca header {
+    background-color: rgba(0, 0, 0, 0.95);
+    border-bottom: 4px solid #f9b233; /* Amarelo do logo */
+    padding: 15px 10%;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+}
+
+.page-uniforca nav ul li a:hover {
+    color: #f9b233;
+}
+
+.page-uniforca .btn-nav {
+    background-color: #f9b233;
+    color: #000 !important;
+    padding: 8px 20px;
+    border-radius: 5px;
+    font-weight: bold;
+}
+
+/* Hero Section */
+.page-uniforca .hero {
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.8)), 
+                url('img/hq720\ \(1\)uni.jpg') center/cover;
+    color: #fff;
+}
+
+.page-uniforca .hero h1 span { 
+    color: #f9b233; 
+}
+
+.page-uniforca .btn-principal {
+    background-color: #f9b233;
+    color: #000;
+    padding: 15px 40px;
+    text-decoration: none;
+    font-weight: bold;
+    border-radius: 30px;
+    display: inline-block;
+    margin-top: 25px;
+    transition: 0.3s;
+}
+
+.page-uniforca .btn-principal:hover {
+    background-color: #e5a122;
+    transform: scale(1.05);
+}
+
+/* Títulos */
+.page-uniforca .titulo-uniforca { 
+    color: #000; 
+    font-size: 2.5rem; 
+    margin-bottom: 20px; 
+    text-transform: uppercase; 
+}
+
+.page-uniforca .titulo-uniforca-preto {
+    color: #000;
+    font-size: 2.5rem;
+    font-weight: bold;
+}
+
+/* Backgrounds de Seção */
+.page-uniforca .bg-uniforca-amarelo { 
+    background-color: #f9b233; 
+}
+
+/* Estilo da Galeria Masonry (Padrão Cultura) */
+.page-uniforca .galeria-grid {
+    column-count: 3;
+    column-gap: 15px;
+    margin-top: 30px;
+}
+
+.page-uniforca .foto-item {
+    display: inline-block;
+    width: 100%;
+    margin-bottom: 15px;
+    border-radius: 8px;
+    overflow: hidden;
+    background: #000;
+}
+
+.page-uniforca .foto-item img {
+    width: 100%;
+    height: auto;
+    display: block;
+    filter: grayscale(100%); /* Começa em P&B */
+    transition: 0.6s ease-in-out;
+}
+
+.page-uniforca .foto-item:hover img {
+    filter: grayscale(0%); /* Ganha cor no hover */
+    transform: scale(1.05);
+}
+
+/* Cards */
+.page-uniforca .card {
+    background: #fff;
+    border-bottom: 5px solid #000;
+    padding: 40px 20px;
+    transition: 0.3s;
+}
+
+.page-uniforca .card i { 
+    font-size: 2.5rem; 
+    color: #f9b233; 
+    margin-bottom: 15px; 
+}
+
+/* Formulário e Botão */
+.page-uniforca .btn-enviar-uniforca {
+    width: 100%;
+    padding: 15px;
+    background: #000;
+    color: #f9b233;
+    border: none;
+    font-weight: bold;
+    cursor: pointer;
+    border-radius: 5px;
+    font-size: 1.1rem;
+}
+
+.page-uniforca .btn-enviar-uniforca:hover {
+    background-color: #333;
+}
+
+/* Rodapé */
+.page-uniforca footer { 
+    background: #000; 
+    color: #fff; 
+    padding: 40px; 
+    text-align: center; 
+}
+
+@media (max-width: 768px) {
+    .page-uniforca .galeria-grid { column-count: 2; }
+}
+/* ==========================================================
+   ESTILO PROJETO HELP (AMARELO, BRANCO E PRETO)
+   ========================================================== */
+
+.page-help {
+    background-color: #ffffff;
+    color: #333;
+}
+
+.page-help header {
+    background-color: rgba(255, 255, 255, 0.514);
+    border-bottom: 4px solid #ffd100; /* Amarelo Vibrante */
+    padding: 15px 10%;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+}
+
+.page-help nav ul li a { color: #333; }
+.page-help nav ul li a:hover { color: #ffd100; }
+
+.page-help .btn-nav {
+    background-color: #ffd100;
+    color: #000 !important;
+    padding: 8px 20px;
+    border-radius: 5px;
+    font-weight: bold;
+}
+
+.page-help .hero {
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    background: linear-gradient(rgba(255, 209, 0, 0.2), rgba(0, 0, 0, 0.8)), 
+                url('img/hq720\ \(1\)help.jpg') center/cover;
+}
+
+.page-help .hero h1 span { color: #ffd100; }
+
+.page-help .btn-principal {
+    background-color: #ffd100;
+    color: #000;
+    padding: 15px 40px;
+    text-decoration: none;
+    font-weight: bold;
+    border-radius: 30px;
+    display: inline-block;
+    margin-top: 25px;
+}
+
+.page-help .titulo-help { 
+    color: #333; 
+    font-size: 2.5rem; 
+    margin-bottom: 20px; 
+    text-transform: uppercase; 
+    font-weight: 900;
+}
+
+.page-help .titulo-help-preto {
+    color: #000;
+    font-size: 2.5rem;
+    font-weight: 900;
+}
+
+.page-help .bg-help-amarelo { 
+    background-color: #ffd100; 
+}
+
+/* Galeria Masonry P&B (Padronizada) */
+.page-help .galeria-grid {
+    column-count: 3;
+    column-gap: 15px;
+}
+
+.page-help .foto-item img {
+    width: 100%;
+    filter: grayscale(100%);
+    transition: 0.5s ease-in-out;
+    border-radius: 10px;
+}
+
+.page-help .foto-item:hover img {
+    filter: grayscale(0%);
+    transform: scale(1.03);
+}
+
+/* Cards HELP */
+.page-help .card {
+    background: #fff;
+    border-top: 6px solid #ffd100;
+    padding: 40px 20px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+}
+
+.page-help .card i { 
+    font-size: 2.5rem; 
+    color: #ffd100; 
+    margin-bottom: 15px; 
+}
+
+/* Botão Formulário */
+.page-help .btn-enviar-help {
+    width: 100%;
+    padding: 15px;
+    background: #000;
+    color: #ffd100;
+    border: none;
+    font-weight: bold;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+.page-help footer { 
+    background: #1a1a1a; 
+    color: #ffffff; 
+    padding: 40px; 
+    text-align: center; 
+}
+
+@media (max-width: 768px) {
+    .page-help .galeria-grid { column-count: 2; }
 }
