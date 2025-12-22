@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FJU - Força Jovem Universal</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+
+    <header id="header">
+        <nav>
+            <div class="logo">
+                <img src="img/coordenador.webp" alt="Logo FJU" id="imgLogo">
+            </div>
+            <ul>
+                <li><a href="#inicio">Início</a></li>
+                <li><a href="#projetos">Projetos</a></li>
+                <li><a href="#horarios">Horários</a></li>
+                <li><a href="#inscricao" class="btn-nav">Fazer Parte</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section id="inicio" class="hero">
+        <div class="hero-content">
+            <img src="img/coordenador.webp" alt="FJU" class="logo-central">
+            <h1>Juntos e <span>Misturados.</span></h1>
+            <p>Descobre o teu valor e faz novos amigos no maior grupo jovem do país.</p>
+            <a href="#inscricao" class="btn-principal">Saber Mais</a>
+        </div>
+    </section>
+
+    <section id="projetos" class="section-container">
+        <h2 class="titulo-fju">Nossos Projetos</h2>
+        <div class="cards-container">
+            <a href="esporte.html" class="card"><i class="fas fa-volleyball"></i><h3>Esporte</h3><p>Nascido para vencer.</p></a>
+            <a href="cultura.html" class="card"><i class="fas fa-icons"></i><h3>Cultura</h3><p>A arte de salvar.</p></a>
+            <a href="help.html" class="card"><i class="fas fa-hand-holding-heart"></i><h3>Help</h3><p>Não te julgo. Te ajudo.</p></a>
+            <a href="midia.html" class="card"><i class="fas fa-camera"></i><h3>Mídia</h3><p>A voz da FJU.</p></a>
+            <a href="universitario.html" class="card"><i class="fas fa-graduation-cap"></i><h3>Universitário</h3><p>Formando jovens visionários.</p></a>
+            <a href="uniforca.html" class="card"><i class="fas fa-shield-halved"></i><h3>Uniforça</h3><p>Unidos somos mais fortes.</p></a>
+            <a href="atalaia.html" class="card"><i class="fas fa-bullhorn"></i><h3>Atalaia</h3><p>Somos todos atalaias.</p></a>
+            <a href="arcanjos.html" class="card"><i class="fas fa-cross"></i><h3>Arcanjos</h3><p>Sem limites para resgatar.</p></a>
+            <a href="assistentes.html" class="card"><i class="fas fa-hands-helping"></i><h3>Assistentes</h3><p>Sempre prontas para ajudar.</p></a>
+        </div>
+    </section>
+
+    <section id="horarios" class="section-container bg-azul">
+        <h2 style="color: #fff;">Encontros FJU</h2>
+        <p style="color: #fff; margin-bottom: 30px;">Vê o horário do "Encontro Jovem" no teu estado:</p>
+        <div class="horarios-grid">
+            <div class="horario-item"><strong>São Paulo</strong><span>Sábado às 16h</span></div>
+            <div class="horario-item"><strong>Rio de Janeiro</strong><span>Sábado às 17h</span></div>
+            <div class="horario-item"><strong>Bahia</strong><span>Sábado às 16h</span></div>
+            <div class="horario-item"><strong>Portugal</strong><span>Sábado às 16h</span></div>
+        </div>
+        <p style="margin-top: 20px; font-size: 0.9rem; color: #ccc;">*Consulta a FJU mais próxima de ti para confirmar o horário local.</p>
+    </section>
+
+    <section id="ajuda" class="section-container bg-help">
+        <img src="img/HELP.webp" alt="Help FJU" class="logo-help">
+        <h2>Não Desistas!</h2>
+        <p>Tens alguém pronto para te ouvir sem julgamentos. O projeto Help está disponível 24h.</p>
+        <a href="https://wa.me/seunumeroaqui" class="btn-help"><i class="fab fa-whatsapp"></i> Conversar no WhatsApp</a>
+    </section>
+
+    <section id="inscricao" class="section-container">
+        <div class="form-box">
+            <h2 class="titulo-fju" style="margin-bottom: 15px;">Participa</h2>
+            <form id="formFJU">
+                <input type="text" name="nome" placeholder="Nome Completo" required>
+                <input type="tel" name="whatsapp" placeholder="Teu WhatsApp" required>
+                <select name="estado" required>
+                    <option value="" disabled selected>Seu Estado</option>
+                    <option value="SP">São Paulo</option>
+                    <option value="RJ">Rio de Janeiro</option>
+                    <option value="BA">Bahia</option>
+                    <option value="PT">Portugal / Outros</option>
+                </select>
+                <button type="submit" id="btnEnviar" class="btn-enviar-fju">Enviar Dados</button>
+            </form>
+        </div>
+    </section>
+
+    <footer>
+        <div class="social-links">
+            <a href="#"><i class="fab fa-instagram"></i></a>
+            <a href="#"><i class="fab fa-youtube"></i></a>
+        </div>
+        <p>&copy; 2025 Força Jovem Universal - Juntos e Misturados.</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
