@@ -9,21 +9,21 @@ const forms = document.querySelectorAll('form[id^="form"]');
     ========================================================== */
 document.addEventListener('DOMContentLoaded', function () {
     
-    // --- LÓGICA PARA A PÁGINA PRINCIPAL E PÁGINA DE ESPORTES ---
+    // Carrossel Principal e Projetos
     const splideElement = document.querySelector('.splide:not(#splide-help)');
     if (splideElement) {
         const isMainPage = document.querySelector('#horarios') || document.querySelector('#localizacao'); 
 
         if (isMainPage) {
             const splideMain = new Splide('.splide', {
-                heightRatio: 0.5, // Reduzido para não ficar gigante
+                heightRatio: 0.5,
                 cover      : true,
                 video      : { loop: true, mute: true, hideControls: false },
                 breakpoints: { 768: { heightRatio: 0.70 } }
             });
             splideMain.mount( window.splide.Extensions );
         } else {
-            const splideEsporte = new Splide('.splide', {
+            const splideProjetos = new Splide('.splide', {
                 type    : 'loop',
                 perPage : 3,
                 autoplay: true,
@@ -34,16 +34,16 @@ document.addEventListener('DOMContentLoaded', function () {
                     768: { perPage: 1 }
                 }
             });
-            splideEsporte.mount();
+            splideProjetos.mount();
         }
     }
 
-    // --- LÓGICA PARA A PÁGINA HELP (DIMINUÍDA CONFORME SOLICITADO) ---
+    // Carrossel Página Help (Vídeos Menores)
     const splideHelpElement = document.querySelector('#splide-help');
     if (splideHelpElement) {
         const splideHelp = new Splide('#splide-help', {
             type        : 'loop',
-            perPage     : 3,       // Mostra 3 vídeos menores em vez de 1 gigante
+            perPage     : 3, 
             gap         : '20px',
             heightRatio : 0.5,     
             cover       : true,
@@ -56,12 +56,11 @@ document.addEventListener('DOMContentLoaded', function () {
         splideHelp.mount( window.splide.Extensions );
     }
 
-    // --- INICIALIZAR MAPA ---
     initMapaFJU();
 });
 
 /* ==========================================================
-    3. ENVIO DINÂMICO DE FORMULÁRIOS (FORMSPREE)
+    3. ENVIO DINÂMICO E REDIRECIONAMENTO PERSONALIZADO
     ========================================================== */
 async function handleSubmit(event) {
     event.preventDefault();
@@ -73,7 +72,8 @@ async function handleSubmit(event) {
     btn.disabled = true;
 
     const data = new FormData(form);
-    
+    const bodyClass = document.body.className;
+
     try {
         const response = await fetch(`https://formspree.io/f/${FORMSPREE_ID}`, {
             method: 'POST',
@@ -82,12 +82,34 @@ async function handleSubmit(event) {
         });
 
         if (response.ok) {
-            window.location.href = "obrigado.html"; 
+            // Lógica de redirecionamento baseada na classe do body
+            if (bodyClass.includes('page-esporte')) {
+                window.location.href = "obrigado-esporte.html";
+            } else if (bodyClass.includes('page-midia')) {
+                window.location.href = "obrigado-midia.html";
+            } else if (bodyClass.includes('page-uniforca')) {
+                window.location.href = "obrigado-uniforca.html";
+            } else if (bodyClass.includes('page-atalaia')) {
+                window.location.href = "obrigado-atalaia.html";
+            } else if (bodyClass.includes('page-arcanjos')) {
+                window.location.href = "obrigado-arcanjos.html";
+            } else if (bodyClass.includes('page-universitarios')) {
+                window.location.href = "obrigado-universitarios.html";
+            } else if (bodyClass.includes('page-assistentes')) {
+                window.location.href = "obrigado-assistentes.html";
+            } else if (bodyClass.includes('page-cultura')) {
+                window.location.href = "obrigado.html"; 
+            } else {
+                window.location.href = "obrigado.html"; // Fallback geral
+            }
         } else {
-            throw new Error("Erro no servidor");
+            const result = await response.json();
+            alert(result.error || "Erro no envio. Verifique se o formulário foi ativado no Formspree.");
+            btn.innerText = originalText;
+            btn.disabled = false;
         }
     } catch (error) {
-        alert("Ocorreu um erro. Verifique sua conexão e tente novamente.");
+        alert("Ocorreu um erro ao enviar. Verifique sua conexão.");
         btn.innerText = originalText;
         btn.disabled = false;
     }
@@ -98,32 +120,7 @@ forms.forEach(form => {
 });
 
 /* ==========================================================
-    4. CONTROLE DE SCROLL E CORES
-    ========================================================== */
-window.addEventListener('scroll', function() {
-    const header = document.getElementById('header');
-    const isEsporte = document.body.classList.contains('page-esporte');
-    const isHelp = document.body.classList.contains('page-help');
-
-    let corSolida = "#002d5b"; 
-    if (isEsporte) corSolida = "#004d2a"; 
-    if (isHelp) corSolida = "#f1c40f"; 
-
-    if (header) {
-        if (window.scrollY > 50) {
-            header.style.background = corSolida;
-            header.style.opacity = "0.95";
-            header.style.padding = "10px 5%";
-        } else {
-            header.style.background = corSolida;
-            header.style.opacity = "1";
-            header.style.padding = "1rem 5%";
-        }
-    }
-});
-
-/* ==========================================================
-    5. ROLAGEM SUAVE (SMOOTH SCROLL)
+    4. ROLAGEM SUAVE (SMOOTH SCROLL)
     ========================================================== */
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     anchor.addEventListener('click', function (e) {
@@ -142,32 +139,29 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
 });
 
 /* ==========================================================
-    6. LÓGICA DO MAPA (LOCALIZAÇÃO IMEDIATA)
+    5. LÓGICA DO MAPA (UNIFICADA)
     ========================================================== */
 function initMapaFJU() {
     const mapContainer = document.getElementById('map');
     if (!mapContainer) return;
 
-    // Mapa base
     const map = L.map('map').setView([-14.235, -51.925], 4);
 
     L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
         attribution: '© OpenStreetMap'
     }).addTo(map);
 
-    // Assim que o GPS liga, ele busca a Universal
     if (navigator.geolocation) {
         navigator.geolocation.getCurrentPosition((position) => {
             const lat = position.coords.latitude;
             const lng = position.coords.longitude;
-            
             map.setView([lat, lng], 15); 
 
             L.marker([lat, lng]).addTo(map)
-                .bindPopup('<b>Você está aqui!</b><br><a href="https://www.google.com/maps/search/Igreja+Universal/@' + lat + ',' + lng + ',15z" target="_blank">Clique para ver as igrejas próximas</a>')
+                .bindPopup('<b>Você está aqui!</b><br><a href="https://www.google.com/maps/search/Igreja+Universal/@' + lat + ',' + lng + ',15z" target="_blank">Ver igrejas próximas</a>')
                 .openPopup();
         }, () => {
-            console.log("GPS desativado.");
+            console.log("Acesso à localização negado pelo usuário.");
         });
     }
 }

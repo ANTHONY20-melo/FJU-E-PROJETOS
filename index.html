@@ -11,12 +11,9 @@
     
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/css/splide.min.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@splidejs/splide-extension-video@0.8.0/dist/css/splide-extension-video.min.css">
-    
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
 </head>
-<body class="layout-sidebar">
-
-    <aside class="sidebar">
+<body class="layout-sidebar page-home"> <aside class="sidebar">
         <div class="sidebar-header">
             <img src="img/coordenador.webp" alt="Logo FJU" class="logo-sidebar">
         </div>
@@ -75,6 +72,9 @@
                                 <li class="splide__slide" data-splide-youtube="https://www.youtube.com/watch?v=RkjV-p_yTlU">
                                     <img src="img/fju.jpg" alt="Evento FJU">
                                 </li>
+                                <li class="splide__slide" data-splide-youtube="https://www.youtube.com/watch?v=WLfralIFh7M">
+                                    <img src="img/fju.jpg" alt="EU SOU FORTE FJU">
+                                </li>
                             </ul>
                         </div>
                     </div>
@@ -89,7 +89,7 @@
         <section id="inscricao" class="section-container bg-tricolor-fju">
             <div class="form-box">
                 <h2 class="titulo-fju">Participar</h2>
-                <p style="margin-bottom: 15px;">Preencha seus dados e entraremos em contato!</p>
+                <p style="margin-bottom: 15px; color: #333;">Preencha seus dados e entraremos em contato!</p>
                 <form id="formFJU">
                     <input type="text" name="nome" placeholder="Nome Completo" required>
                     <input type="tel" name="whatsapp" placeholder="Teu WhatsApp" required>
@@ -110,6 +110,17 @@
         </footer>
 
     </main>
+
+    <div id="modalAgradecimento" class="modal-sucesso">
+        <div class="modal-content">
+            <div class="modal-icon">
+                <i class="fas fa-check-circle"></i>
+            </div>
+            <h2 id="tituloAgradecimento">Obrigado!</h2>
+            <p id="mensagemAgradecimento">Recebemos seus dados. Em breve um de nossos voluntários entrará em contato.</p>
+            <button onclick="fecharModal()" class="btn-fechar">Entendido</button>
+        </div>
+    </div>
 
     <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/js/splide.min.js"></script>
