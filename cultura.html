@@ -6,106 +6,109 @@
     <title>Cultura FJU - A Arte de Salvar</title>
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
 </head>
-<body class="page-cultura"> 
-    
-    <header id="header">
-    <nav>
-        <div class="logo">
-            <img src="img/CULTURA.webp" alt="Logo Cultura FJU" id="imgLogo">
-        </div>
-        <ul>
-            <li><a href="Index.html">Voltar ao Início</a></li>
-            <li><a href="#sobre">Sobre</a></li>
-            <li><a href="#atividades">Projetos</a></li>
-            <li><a href="#galeria">Galeria</a></li>
-            <li><a href="#inscricao" class="btn-nav">Inscrição</a></li>
-        </ul>
-    </nav>
-</header>
+<body class="page-cultura layout-projeto"> 
 
-    <section id="inicio" class="hero">
-        <div class="hero-content">
-            <img src="img/CULTURA.webp" alt="Cultura FJU" class="logo-central">
-            <h1>A arte de <span>salvar.</span></h1>
-            <p>Descubra o seu talento e transforme vidas através da arte.</p>
-            <a href="#inscricao" class="btn-principal">Quero Fazer Parte</a>
-        </div>
-    </section>
-
-    <section id="sobre" class="section-container">
-        <h2 class="titulo-amarelo">Sobre o Cultura</h2>
-        <p class="texto-descricao">O projeto Cultura FJU visa desenvolver o talento artístico dos jovens, proporcionando workshops e apresentações em diversas áreas, sempre com o foco em levar uma mensagem de superação e valores.</p>
-    </section>
-
-    <section id="atividades" class="bg-darker section-container">
-        <h2 class="titulo-amarelo">Nossas Atividades</h2>
-        <div class="cards-container">
-            <div class="card">
-                <i class="fas fa-child"></i> 
-                <h3>Dança</h3>
-                <p>Street dance, contemporâneo e coreografias que impactam.</p>
+    <nav class="projeto-panel-nav cultura-theme">
+        <div class="panel-container">
+            <div class="panel-header">
+                <img src="img/CULTURA.webp" alt="Logo Cultura" class="logo-painel">
+                <h3>CULTURA</h3>
             </div>
-            <div class="card">
-                <i class="fas fa-masks-theater"></i>
-                <h3>Teatro</h3>
-                <p>Expressão cênica e peças que transmitem lições de vida.</p>
-            </div>
-            <div class="card">
-                <i class="fas fa-music"></i>
-                <h3>Música</h3>
-                <p>Bandas, corais e aprendizado de instrumentos musicais.</p>
-            </div>
-            <div class="card">
-                <i class="fas fa-camera-retro"></i>
-                <h3>Audiovisual</h3>
-                <p>Fotografia, edição e suporte em mídias (VPR).</p>
-            </div>
-        </div>
-    </section>
-
-    <section id="galeria" class="section-container">
-        <h2 class="titulo-amarelo">Galeria</h2>
-        <div class="galeria-grid">
-            <div class="foto-item"><img src="img/D.P P.J A.B.jpg" alt="Foto 1"></div>
-            <div class="foto-item"><img src="img/FAMILIA MEGA DANCE.jpg" alt="Foto 2"></div>
-            <div class="foto-item"><img src="img/GUERREIROS.jpg" alt="Foto 3"></div>
-            <div class="foto-item"><img src="img/ILHA DA DUVIDA.jpg" alt="Foto 4"></div>
-            <div class="foto-item"><img src="img/SELFIE CONFRA.jpg" alt="Foto 5"></div>
-            <div class="foto-item"><img src="img/SELFIE DO DIA.jpg" alt="Foto 6"></div>
-        </div>
-    </section>
-
-    <section id="inscricao" class="section-container bg-darker">
-        <div class="form-box">
-            <h2 class="titulo-amarelo">Inscrição</h2>
-            <p style="margin-bottom: 20px;">Escolha sua área e entraremos em contato!</p>
             
-            <form id="formTalento">
-                <input type="text" id="nome" name="nome" placeholder="Seu Nome" required>
-                <input type="email" id="email" name="email" placeholder="Seu Melhor E-mail" required>
-                
-                <select id="talento" name="departamento" required>
-                    <option value="" disabled selected>Selecione seu Departamento</option>
-                    <option value="Dança">Dança</option>
-                    <option value="Teatro">Teatro</option>
-                    <option value="Música">Música</option>
-                    <option value="VPR">VPR / Audiovisual</option>
-                </select>
+            <a href="#inicio" class="panel-link active">
+                <i class="fas fa-home"></i>
+                <span>Início</span>
+            </a>
+            <a href="#sobre" class="panel-link">
+                <i class="fas fa-info-circle"></i>
+                <span>Sobre</span>
+            </a>
+            <a href="#atividades" class="panel-link">
+                <i class="fas fa-masks-theater"></i>
+                <span>Atividades</span>
+            </a>
+            <a href="#galeria" class="panel-link">
+                <i class="fas fa-images"></i>
+                <span>Galeria</span>
+            </a>
+            <a href="#inscricao" class="panel-link">
+                <i class="fas fa-edit"></i>
+                <span>Inscrição</span>
+            </a>
 
-                <button type="submit" id="btnEnviar" class="btn-enviar">Enviar Meus Dados</button>
-            </form>
+            <a href="index.html" class="panel-link voltar-home">
+                <i class="fas fa-arrow-left"></i>
+                <span>Sair</span>
+            </a>
         </div>
-    </section>
+    </nav>
 
-    <footer>
-        <div class="social-links">
-            <a href="#"><i class="fab fa-instagram"></i></a>
-            <a href="#"><i class="fab fa-facebook"></i></a>
-            <a href="#"><i class="fab fa-youtube"></i></a>
-        </div>
-        <p>&copy; 2025 Cultura FJU - Todos os direitos reservados.</p>
-    </footer>
+    <main class="main-content-projeto">
+        <section id="inicio" class="hero">
+            <div class="hero-content">
+                <img src="img/CULTURA.webp" alt="Cultura FJU" class="logo-central">
+                <h1>A arte de <span>salvar.</span></h1>
+                <p>Descubra o seu talento e transforme vidas através da arte.</p>
+                <a href="#inscricao" class="btn-principal">Quero Fazer Parte</a>
+            </div>
+        </section>
+
+        <section id="sobre" class="section-container">
+            <h2 class="titulo-amarelo">Sobre o Cultura</h2>
+            <p class="texto-descricao">O projeto Cultura FJU visa desenvolver o talento artístico dos jovens, proporcionando workshops e apresentações em diversas áreas, sempre focando em superação e valores.</p>
+        </section>
+
+        <section id="atividades" class="bg-darker section-container">
+            <h2 class="titulo-amarelo">Nossas Atividades</h2>
+            <div class="cards-container">
+                <div class="card"><i class="fas fa-child"></i><h3>Dança</h3><p>Street dance e coreografias que impactam.</p></div>
+                <div class="card"><i class="fas fa-masks-theater"></i><h3>Teatro</h3><p>Expressão cênica e lições de vida.</p></div>
+                <div class="card"><i class="fas fa-music"></i><h3>Música</h3><p>Bandas, corais e instrumentos.</p></div>
+                <div class="card"><i class="fas fa-camera-retro"></i><h3>Audiovisual</h3><p>Fotografia, edição e suporte VPR.</p></div>
+            </div>
+        </section>
+
+        <section id="galeria" class="section-container">
+            <h2 class="titulo-amarelo">Galeria</h2>
+            <div class="galeria-grid">
+                <div class="foto-item"><img src="img/D.P P.J A.B.jpg" alt="Foto 1"></div>
+                <div class="foto-item"><img src="img/FAMILIA MEGA DANCE.jpg" alt="Foto 2"></div>
+                <div class="foto-item"><img src="img/GUERREIROS.jpg" alt="Foto 3"></div>
+                <div class="foto-item"><img src="img/ILHA DA DUVIDA.jpg" alt="Foto 4"></div>
+                <div class="foto-item"><img src="img/SELFIE CONFRA.jpg" alt="Foto 5"></div>
+                <div class="foto-item"><img src="img/SELFIE DO DIA.jpg" alt="Foto 6"></div>
+            </div>
+        </section>
+
+        <section id="inscricao" class="section-container bg-darker">
+            <div class="form-box">
+                <h2 class="titulo-amarelo">Inscrição</h2>
+                <form id="formTalento">
+                    <input type="text" name="nome" placeholder="Seu Nome" required>
+                    <input type="email" name="email" placeholder="Seu Melhor E-mail" required>
+                    <select name="departamento" required>
+                        <option value="" disabled selected>Selecione seu Departamento</option>
+                        <option value="Dança">Dança</option>
+                        <option value="Teatro">Teatro</option>
+                        <option value="Música">Música</option>
+                        <option value="VPR">VPR / Audiovisual</option>
+                    </select>
+                    <button type="submit" class="btn-enviar">Enviar Meus Dados</button>
+                </form>
+            </div>
+        </section>
+
+        <footer>
+            <div class="social-links">
+                <a href="#"><i class="fab fa-instagram"></i></a>
+                <a href="#"><i class="fab fa-facebook"></i></a>
+                <a href="#"><i class="fab fa-youtube"></i></a>
+            </div>
+            <p>&copy; 2025 Cultura FJU - Todos os direitos reservados.</p>
+        </footer>
+    </main>
 
     <script src="script.js"></script>
 </body>

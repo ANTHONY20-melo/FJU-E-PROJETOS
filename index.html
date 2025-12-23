@@ -6,12 +6,13 @@
     <title>FJU - Força Jovem Universal</title>
     
     <link rel="stylesheet" href="style.css">
-    
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
     
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/css/splide.min.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@splidejs/splide-extension-video@0.8.0/dist/css/splide-extension-video.min.css">
+    
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
 </head>
 <body class="layout-sidebar">
 
@@ -24,8 +25,7 @@
             <ul>
                 <li><a href="#inicio"><i class="fas fa-home"></i> <span>Início</span></a></li>
                 <li><a href="#projetos"><i class="fas fa-th-large"></i> <span>Projetos</span></a></li>
-                <li><a href="#horarios"><i class="fas fa-clock"></i> <span>Horários</span></a></li>
-                <li><a href="#ajuda"><i class="fas fa-question-circle"></i> <span>Central de Ajuda</span></a></li>
+                <li><a href="#horarios"><i class="fas fa-clock"></i> <span>Horários/Mapa</span></a></li>
                 <li><a href="#inscricao" class="btn-sidebar"><i class="fas fa-user-plus"></i> <span>Fazer Parte</span></a></li>
             </ul>
         </nav>
@@ -51,7 +51,6 @@
             <div class="cards-container">
                 <a href="esporte.html" class="card"><i class="fas fa-volleyball"></i><h3>Esporte</h3><p>Nascido para vencer.</p></a>
                 <a href="cultura.html" class="card"><i class="fas fa-icons"></i><h3>Cultura</h3><p>A arte de salvar.</p></a>
-                <a href="help.html" class="card"><i class="fas fa-hand-holding-heart"></i><h3>Help</h3><p>Não te julgo. Te ajudo.</p></a>
                 <a href="midia.html" class="card"><i class="fas fa-camera"></i><h3>Mídia</h3><p>A voz da FJU.</p></a>
                 <a href="universitarios.html" class="card"><i class="fas fa-graduation-cap"></i><h3>Universitário</h3><p>Formando jovens visionários.</p></a>
                 <a href="uniforca.html" class="card"><i class="fas fa-fist-raised"></i><h3>Uniforça</h3><p>Unidos somos mais fortes.</p></a>
@@ -65,19 +64,16 @@
             <div class="horarios-content">
                 <div class="horarios-text">
                     <h2 class="text-white">Seja Bem-vindo à FJU</h2>
-                    <p class="text-white">Assista aos nossos melhores momentos e sinta a energia!</p>
+                    <p class="text-white">Assista aos nossos melhores momentos e localize uma Universal!</p>
                     
                     <div class="splide" id="splide-videos" style="margin-top: 20px;">
                         <div class="splide__track">
                             <ul class="splide__list">
-                                <li class="splide__slide" data-splide-youtube="https://www.youtube.com/watch?v=WLfralIFh7M">
-                                    <img src="img/FJU LOGO.png" alt="Amizade FJU">
-                                </li>
-                                <li class="splide__slide" data-splide-youtube="https://www.youtube.com/watch?v=WLfralIFh7M">
-                                    <img src="img/FJU LOGO.png" alt="Amizade FJU">
-                                </li>
                                 <li class="splide__slide" data-splide-youtube="https://www.youtube.com/watch?v=PT8x7HKYVfA">
-                                    <img src="img/FJU LOGO.png" alt="Evento FJU">
+                                    <img src="img/fju.jpg" alt="Amizade FJU">
+                                </li>
+                                <li class="splide__slide" data-splide-youtube="https://www.youtube.com/watch?v=RkjV-p_yTlU">
+                                    <img src="img/fju.jpg" alt="Evento FJU">
                                 </li>
                             </ul>
                         </div>
@@ -85,19 +81,9 @@
                 </div>
 
                 <div class="mapa-container" style="margin-top: 30px;">
-                    <iframe 
-                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3657.275692233649!2d-46.6385!3d-23.5593!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMjPCsDMzJzMzLjUiUyA0NsKwMzgnMTguNiJX!5e0!3m2!1spt-BR!2sbr!4v1620000000000!5m2!1spt-BR!2sbr" 
-                        width="100%" height="300" style="border:0; border-radius: 15px;" allowfullscreen="" loading="lazy">
-                    </iframe>
+                    <div id="map" style="height: 350px; width: 100%; border-radius: 15px; border: 2px solid white;"></div>
                 </div>
             </div>
-        </section>
-
-        <section id="ajuda" class="section-container bg-help">
-            <img src="img/HELP.webp" alt="Help FJU" class="logo-help">
-            <h2>Não Desista!</h2>
-            <p>Tem alguém pronto para te ouvir sem julgamentos. O projeto Help está disponível 24h.</p>
-            <a href="https://wa.me/seunumeroaqui" class="btn-help"><i class="fab fa-whatsapp"></i> Conversar no WhatsApp</a>
         </section>
 
         <section id="inscricao" class="section-container">
@@ -124,6 +110,7 @@
 
     </main>
 
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/js/splide.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@splidejs/splide-extension-video@0.8.0/dist/js/splide-extension-video.min.js"></script>
     <script src="script.js"></script>

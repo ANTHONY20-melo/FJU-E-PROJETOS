@@ -1062,7 +1062,7 @@ footer { padding: 50px 10%; background: #002244; color: #fff; text-align: center
 
 .page-uniforca {
     background-color: #ffffff;
-    color: #000000;
+    color: #080808;
 }
 
 /* Header com as cores do logo */
@@ -1082,7 +1082,7 @@ footer { padding: 50px 10%; background: #002244; color: #fff; text-align: center
 
 .page-uniforca .btn-nav {
     background-color: #f9b233;
-    color: #000 !important;
+    color: #000000 !important;
     padding: 8px 20px;
     border-radius: 5px;
     font-weight: bold;
@@ -1106,7 +1106,7 @@ footer { padding: 50px 10%; background: #002244; color: #fff; text-align: center
 
 .page-uniforca .btn-principal {
     background-color: #f9b233;
-    color: #000;
+    color: #080808;
     padding: 15px 40px;
     text-decoration: none;
     font-weight: bold;
@@ -1123,14 +1123,14 @@ footer { padding: 50px 10%; background: #002244; color: #fff; text-align: center
 
 /* Títulos */
 .page-uniforca .titulo-uniforca { 
-    color: #000; 
+    color: #1a1919; 
     font-size: 2.5rem; 
     margin-bottom: 20px; 
     text-transform: uppercase; 
 }
 
 .page-uniforca .titulo-uniforca-preto {
-    color: #000;
+    color: #080808;
     font-size: 2.5rem;
     font-weight: bold;
 }
@@ -1197,7 +1197,7 @@ footer { padding: 50px 10%; background: #002244; color: #fff; text-align: center
 }
 
 .page-uniforca .btn-enviar-uniforca:hover {
-    background-color: #333;
+    background-color: #555555;
 }
 
 /* Rodapé */
@@ -1210,131 +1210,6 @@ footer { padding: 50px 10%; background: #002244; color: #fff; text-align: center
 
 @media (max-width: 768px) {
     .page-uniforca .galeria-grid { column-count: 2; }
-}
-/* ==========================================================
-   ESTILO PROJETO HELP (AMARELO, BRANCO E PRETO)
-   ========================================================== */
-
-.page-help {
-    background-color: #ffffff;
-    color: #333;
-}
-
-.page-help header {
-    background-color: rgba(255, 255, 255, 0.514);
-    border-bottom: 4px solid #ffd100; /* Amarelo Vibrante */
-    padding: 15px 10%;
-    position: fixed;
-    width: 100%;
-    top: 0;
-    z-index: 1000;
-}
-
-.page-help nav ul li a { color: #333; }
-.page-help nav ul li a:hover { color: #ffd100; }
-
-.page-help .btn-nav {
-    background-color: #ffd100;
-    color: #000 !important;
-    padding: 8px 20px;
-    border-radius: 5px;
-    font-weight: bold;
-}
-
-.page-help .hero {
-    height: 100vh;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-    background: linear-gradient(rgba(255, 209, 0, 0.2), rgba(0, 0, 0, 0.8)), 
-                url('img/hq720\ \(1\)help.jpg') center/cover;
-}
-
-.page-help .hero h1 span { color: #ffd100; }
-
-.page-help .btn-principal {
-    background-color: #ffd100;
-    color: #000;
-    padding: 15px 40px;
-    text-decoration: none;
-    font-weight: bold;
-    border-radius: 30px;
-    display: inline-block;
-    margin-top: 25px;
-}
-
-.page-help .titulo-help { 
-    color: #333; 
-    font-size: 2.5rem; 
-    margin-bottom: 20px; 
-    text-transform: uppercase; 
-    font-weight: 900;
-}
-
-.page-help .titulo-help-preto {
-    color: #000;
-    font-size: 2.5rem;
-    font-weight: 900;
-}
-
-.page-help .bg-help-amarelo { 
-    background-color: #ffd100; 
-}
-
-/* Galeria Masonry P&B (Padronizada) */
-.page-help .galeria-grid {
-    column-count: 3;
-    column-gap: 15px;
-}
-
-.page-help .foto-item img {
-    width: 100%;
-    filter: grayscale(100%);
-    transition: 0.5s ease-in-out;
-    border-radius: 10px;
-}
-
-.page-help .foto-item:hover img {
-    filter: grayscale(0%);
-    transform: scale(1.03);
-}
-
-/* Cards HELP */
-.page-help .card {
-    background: #fff;
-    border-top: 6px solid #ffd100;
-    padding: 40px 20px;
-    box-shadow: 0 10px 30px rgba(0,0,0,0.05);
-}
-
-.page-help .card i { 
-    font-size: 2.5rem; 
-    color: #ffd100; 
-    margin-bottom: 15px; 
-}
-
-/* Botão Formulário */
-.page-help .btn-enviar-help {
-    width: 100%;
-    padding: 15px;
-    background: #000;
-    color: #ffd100;
-    border: none;
-    font-weight: bold;
-    cursor: pointer;
-    border-radius: 5px;
-}
-
-.page-help footer { 
-    background: #1a1a1a; 
-    color: #fff; 
-    padding: 40px; 
-    text-align: center; 
-}
-
-@media (max-width: 768px) {
-    .page-help .galeria-grid { column-count: 2; }
 }
 /* ==========================================================
    ESTILO ATALAIA (AZUL MARINHO E AMARELO)
@@ -1357,10 +1232,10 @@ footer { padding: 50px 10%; background: #002244; color: #fff; text-align: center
 }
 
 .page-atalaia nav ul li a { color: #fff; }
-.page-atalaia nav ul li a:hover { color: #f9b233; }
+.page-atalaia nav ul li a:hover { color: #ee9f16; }
 
 .page-atalaia .btn-nav {
-    background-color: #f9b233;
+    background-color: #eea528;
     color: #002d5b !important;
     padding: 8px 20px;
     border-radius: 5px;
@@ -1382,7 +1257,7 @@ footer { padding: 50px 10%; background: #002244; color: #fff; text-align: center
 .page-atalaia .hero h1 span { color: #f9b233; }
 
 .page-atalaia .btn-principal {
-    background-color: #f9b233;
+    background-color: #f8a71b;
     color: #002d5b;
     padding: 15px 40px;
     font-weight: bold;
@@ -1394,11 +1269,11 @@ footer { padding: 50px 10%; background: #002244; color: #fff; text-align: center
 
 /* Cores das Seções */
 .page-atalaia .titulo-atalaia { color: #002d5b; text-transform: uppercase; font-weight: bold; }
-.page-atalaia .titulo-atalaia-amarelo { color: #f9b233; font-weight: bold; font-size: 2.5rem; }
+.page-atalaia .titulo-atalaia-amarelo { color: #f0a21d; font-weight: bold; font-size: 2.5rem; }
 .page-atalaia .titulo-atalaia-azul { color: #002d5b; font-weight: bold; font-size: 2.5rem; }
 
 .page-atalaia .bg-atalaia-azul { background-color: #002d5b; }
-.page-atalaia .bg-atalaia-amarelo { background-color: #f9b233; }
+.page-atalaia .bg-atalaia-amarelo { background-color: #d4d4d49d; }
 
 /* Cards Atalaia */
 .page-atalaia .card {
@@ -1997,4 +1872,545 @@ body.layout-sidebar {
 .hero-help {
     background: linear-gradient(rgba(241, 196, 15, 0.8), rgba(241, 196, 15, 0.8)), url('img/fundo-help.jpg');
     background-size: cover;
+}
+/* Layout para a página de Esportes com Painel Esquerdo */
+.page-esporte {
+    display: flex;
+}
+
+.projeto-panel-nav {
+    width: 200px; /* Largura do painel esquerdo */
+    height: 100vh;
+    background-color: #004d2a; /* Verde Esporte */
+    position: fixed;
+    left: 0;
+    top: 0;
+    z-index: 1000;
+    padding-top: 20px;
+    box-shadow: 2px 0 10px rgba(0,0,0,0.3);
+}
+
+.panel-container {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
+.panel-header {
+    text-align: center;
+    color: white;
+    padding-bottom: 20px;
+    border-bottom: 1px solid rgba(255,255,255,0.1);
+    margin-bottom: 20px;
+}
+
+.panel-link {
+    color: white;
+    text-decoration: none;
+    padding: 15px 20px;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    transition: 0.3s;
+    font-size: 0.9rem;
+}
+
+.panel-link i {
+    width: 20px;
+    text-align: center;
+}
+
+.panel-link:hover, .panel-link.active {
+    background-color: rgba(255,255,255,0.1);
+    border-left: 4px solid #fff;
+}
+
+.voltar-home {
+    margin-top: auto; /* Empurra o botão "Sair" para o final */
+    background-color: rgba(0,0,0,0.2);
+    padding-bottom: 30px;
+}
+
+/* Ajuste do Conteúdo para não ficar por baixo do painel */
+.main-content-esporte {
+    margin-left: 200px;
+    width: calc(100% - 200px);
+    padding: 20px;
+}
+
+/* RESPONSIVIDADE: Mobile */
+@media (max-width: 768px) {
+    .projeto-panel-nav {
+        width: 100%;
+        height: 60px;
+        top: auto;
+        bottom: 0;
+        flex-direction: row;
+        padding-top: 0;
+        border-radius: 20px 20px 0 0;
+    }
+
+    .panel-container {
+        flex-direction: row;
+        justify-content: space-around;
+        align-items: center;
+        width: 100%;
+    }
+
+    .panel-header, .voltar-home {
+        display: none; /* Esconde no mobile para caber tudo */
+    }
+
+    .panel-link {
+        flex-direction: column;
+        padding: 5px;
+        gap: 5px;
+        font-size: 0.7rem;
+    }
+
+    .panel-link i {
+        font-size: 1.1rem;
+    }
+
+    .panel-link:hover, .panel-link.active {
+        border-left: none;
+        border-top: 3px solid #fff;
+    }
+
+    .main-content-esporte {
+        margin-left: 0;
+        width: 100%;
+        padding-bottom: 80px;
+    }
+}
+/* Layout da Página de Projetos */
+.layout-projeto {
+    display: flex;
+    background: #f4f4f4;
+}
+
+/* Painel Lateral Esquerdo */
+.projeto-panel-nav {
+    width: 220px;
+    height: 100vh;
+    background-color: #004d2a; /* Verde Esporte */
+    position: fixed;
+    left: 0;
+    top: 0;
+    z-index: 1000;
+    color: white;
+    box-shadow: 3px 0 15px rgba(0,0,0,0.2);
+}
+
+.panel-container {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    padding: 20px 0;
+}
+
+.panel-header {
+    text-align: center;
+    padding-bottom: 20px;
+    margin-bottom: 20px;
+    border-bottom: 1px solid rgba(255,255,255,0.1);
+}
+
+.logo-painel {
+    width: 60px;
+    margin-bottom: 10px;
+}
+
+.panel-link {
+    color: white;
+    text-decoration: none;
+    padding: 15px 25px;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    transition: 0.3s;
+    font-size: 0.9rem;
+}
+
+.panel-link i {
+    width: 20px;
+    font-size: 1.1rem;
+}
+
+.panel-link:hover, .panel-link.active {
+    background: rgba(255,255,255,0.15);
+    border-left: 5px solid #fff;
+}
+
+.voltar-home {
+    margin-top: auto;
+    background: rgba(0,0,0,0.3);
+}
+
+/* Ajuste do Conteúdo Principal */
+.main-content-projeto {
+    margin-left: 220px; /* Largura igual à sidebar */
+    width: calc(100% - 220px);
+    transition: 0.3s;
+}
+
+/* RESPONSIVIDADE MOBILE */
+@media (max-width: 768px) {
+    .projeto-panel-nav {
+        width: 100%;
+        height: 70px;
+        top: auto;
+        bottom: 0;
+        border-radius: 20px 20px 0 0;
+    }
+
+    .panel-container {
+        flex-direction: row;
+        justify-content: space-around;
+        padding: 0;
+    }
+
+    .panel-header, .voltar-home {
+        display: none; /* Esconde elementos extras no mobile */
+    }
+
+    .panel-link {
+        flex-direction: column;
+        padding: 10px 5px;
+        gap: 5px;
+        font-size: 0.7rem;
+        flex: 1;
+        justify-content: center;
+    }
+
+    .panel-link i {
+        font-size: 1.2rem;
+    }
+
+    .panel-link.active {
+        border-left: none;
+        border-top: 4px solid rgb(255, 255, 255);
+    }
+
+    .main-content-projeto {
+        margin-left: 0;
+        width: 100%;
+        padding-bottom: 80px; /* Espaço para a barra não cobrir o conteúdo */
+    }
+}
+/* Tema específico para o Painel do Cultura */
+.cultura-theme {
+    background-color: #b1a504 !important; /* Amarelo FJU */
+}
+
+.cultura-theme .panel-link:hover, 
+.cultura-theme .panel-link.active {
+    background: rgba(241, 196, 15, 0.2) !important; /* Brilho Amarelo sutil */
+    border-left: 5px solid #d4ac09 !important; /* Borda Amarela */
+    color: #eeedec !important;
+}
+
+.titulo-amarelo {
+    color: #afaf00;
+    text-align: center;
+    margin-bottom: 30px;
+    font-size: 2rem;
+    text-transform: uppercase;
+}
+
+/* Ajuste Mobile para o Cultura */
+@media (max-width: 768px) {
+    .cultura-theme .panel-link.active {
+        border-left: none !important;
+        border-top: 4px solid #f1c40f !important;
+    }
+}
+/* TEMA MÍDIA FJU */
+.midia-theme {
+    background-color: #002d5b !important; /* Azul FJU */
+}
+
+.midia-theme .panel-link:hover, 
+.midia-theme .panel-link.active {
+    background: rgba(40, 40, 41, 0.062) !important; /* Brilho Vermelho sutil */
+    border-left: 5px solid #fcfcfc !important; /* Destaque Vermelho Mídia */
+    color: #ffffff !important;
+}
+
+.titulo-azul-midia {
+    color: #002d5b;
+    text-align: center;
+    margin-bottom: 30px;
+    font-size: 2rem;
+    text-transform: uppercase;
+    font-weight: 700;
+}
+
+.btn-enviar-midia {
+    background-color: #002d5b;
+    color: white;
+    padding: 12px 25px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: 600;
+    width: 100%;
+    transition: 0.3s;
+}
+
+.btn-enviar-midia:hover {
+    background-color: #f1f1f1; /* Muda para vermelho no hover */
+}
+
+/* Ajuste Mobile para o Mídia */
+@media (max-width: 768px) {
+    .midia-theme .panel-link.active {
+        border-left: none !important;
+        border-top: 4px solid #cac7c7 !important;
+    }
+}
+/* PAINEL COM DEGRADÊ VERMELHO E PRETO */
+.uni-theme {
+    /* Degradê do Vermelho para o Preto (de cima para baixo no PC, da esquerda para direita no Mobile) */
+    background: linear-gradient(180deg, #990000 0%, #000000 100%) !important;
+    border-right: 1px solid rgba(255, 255, 255, 0.13);
+}
+
+/* Ajuste nos Links para combinarem com o fundo escuro */
+.uni-theme .panel-link:hover, 
+.uni-theme .panel-link.active {
+    background: rgba(110, 47, 47, 0.062) !important;
+    border-left: 5px solid #ff0000 !important; /* Borda vermelha viva */
+    color: #ffffff !important;
+}
+
+/* Ajuste para o Mobile (Barra Inferior) */
+@media (max-width: 768px) {
+    .uni-theme {
+        /* No mobile o degradê fica melhor da esquerda para a direita */
+        background: linear-gradient(90deg, #990000 0%, #000000 100%) !important;
+        border-right: none;
+        border-top: 1px solid rgba(255, 255, 255, 0.2);
+    }
+
+    .uni-theme .panel-link.active {
+        border-left: none !important;
+        border-top: 4px solid #ff0000 !important;
+    }
+}
+/* TEMA UNIFORÇA - DEGRADÊ PRETO E AMARELO */
+.uniforca-theme {
+    /* Degradê do Preto para o Amarelo (Vertical no PC) */
+    background: linear-gradient(180deg, #000000 0%, #d4ac0d 100%) !important;
+    border-right: 1px solid rgba(139, 13, 13, 0);
+}
+
+/* Estilo dos Links no Painel */
+.uniforca-theme .panel-link {
+    color: #ffffff; /* Texto branco para contrastar com o topo preto */
+}
+
+/* Quando o link estiver ativo ou o mouse passar em cima */
+.uniforca-theme .panel-link:hover, 
+.uniforca-theme .panel-link.active {
+    background: rgba(201, 188, 8, 0) !important;
+    border-left: 5px solid #000000 !important; /* Borda preta de destaque */
+    color: #000000 !important; /* Texto e ícone ficam pretos para contrastar com o fundo amarelo */
+}
+
+/* Ajuste Mobile (Barra Inferior) */
+@media (max-width: 768px) {
+    .uniforca-theme {
+        /* No mobile o degradê fica horizontal: da esquerda(preto) para direita(amarelo) */
+        background: linear-gradient(90deg, #000000 0%, #d4ac0d 100%) !important;
+        border-right: none;
+        border-top: 1px solid rgba(255, 255, 255, 0.2);
+    }
+
+    .uniforca-theme .panel-link.active {
+        border-left: none !important;
+        border-top: 4px solid #1b1b1b !important;
+    }
+}
+/* TEMA ARCANJOS - DEGRADÊ AZUL ESCURO E AZUL ROYAL */
+.arcanjos-theme {
+    /* Degradê que lembra o céu/proteção */
+    background: linear-gradient(180deg, #001a33 0%, #004d99 100%) !important;
+    border-right: 2px solid #0059b3;
+}
+
+.arcanjos-theme .panel-link:hover, 
+.arcanjos-theme .panel-link.active {
+    background: rgba(17, 14, 197, 0) !important;
+    border-left: 5px solid #ffffff !important; /* Destaque Branco para Pureza */
+    color: #ececec !important;
+    /* Correção do clique marcado */
+    outline: none;
+    -webkit-tap-highlight-color: transparent;
+}
+
+.titulo-arcanjos {
+    color: #003366;
+    text-align: center;
+    margin-bottom: 25px;
+    font-weight: 700;
+    text-transform: uppercase;
+}
+
+.bg-arcanjos-claro {
+    background-color: #f0f7ff; /* Azul bem clarinho para o corpo */
+}
+
+.arcanjos-btn {
+    background-color: #004d99 !important;
+    color: white !important;
+    transition: 0.3s ease;
+}
+
+.arcanjos-btn:hover {
+    background-color: #001a33 !important;
+    transform: scale(1.02);
+}
+
+/* Responsividade Mobile Arcanjos */
+@media (max-width: 768px) {
+    .arcanjos-theme {
+        background: linear-gradient(90deg, #001a33 0%, #004d99 100%) !important;
+    }
+    .arcanjos-theme .panel-link.active {
+        border-left: none !important;
+        border-top: 4px solid #ffffff !important;
+    }
+}
+/* TEMA ASSISTENTES - DEGRADÊ ROSA/PINK PROFUNDO */
+.assistentes-theme {
+    /* Degradê do Rosa Choque para o Branco ou Rosa Bem Claro */
+    background: linear-gradient(180deg, #ff1493 0%, #ffffff 100%) !important;
+    border-right: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+/* Ajuste das cores dos links no painel rosa */
+.assistentes-theme .panel-link {
+    color: #413e3e !important; /* Texto escuro para ler sobre o rosa/branco */
+}
+
+.assistentes-theme .panel-link i {
+    color: #333 !important;
+}
+
+.assistentes-theme .panel-link:hover, 
+.assistentes-theme .panel-link.active {
+    background: rgba(243, 70, 162, 0.014) !important;
+    border-left: 5px solid #ff1493 !important; /* Destaque Rosa */
+    color: #ffffff !important;
+}
+
+.assistentes-theme .panel-link.active i {
+    color: #e7e1e4 !important;
+}
+
+/* Títulos e Seções */
+.titulo-rosa {
+    color: #f1e8ed;
+    text-align: center;
+    margin-bottom: 30px;
+    font-size: 2rem;
+    text-transform: uppercase;
+    font-weight: 700;
+}
+
+.bg-light-pink {
+    background-color: #f1e3e8; /* Lavender Blush (Rosa bem suave) */
+}
+
+.btn-enviar-assistentes {
+    background-color: #ff1493;
+    color: white;
+    padding: 15px;
+    border: none;
+    border-radius: 5px;
+    width: 100%;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.btn-enviar-assistentes:hover {
+    background-color: #c71586;
+    transform: scale(1.02);
+}
+
+/* Responsividade Mobile */
+@media (max-width: 768px) {
+    .assistentes-theme {
+        background: linear-gradient(90deg, #ff1493 0%, #ffffff 100%) !important;
+    }
+    .assistentes-theme .panel-link.active {
+        border-left: none !important;
+        border-top: 4px solid #f80b8a !important;
+    }
+}
+/* TEMA TRICOLOR FJU - VERMELHO, AZUL E BRANCO */
+.atalaia-theme {
+    /* Degradê Vertical: Começa Vermelho, passa pelo Azul e termina Branco */
+    background: linear-gradient(180deg, 
+        #cc0000 0%,    /* Vermelho */
+        #003366 50%,   /* Azul Marinho */
+        #ffffff 100%   /* Branco */
+    ) !important;
+    border-right: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+/* --- Ajuste de Cores dos Links para Contraste --- */
+
+/* No topo (Vermelho) e Meio (Azul), o texto deve ser BRANCO */
+.atalaia-theme .panel-link {
+    color: #ffffff !important;
+    transition: all 0.3s ease;
+}
+
+/* Estilo para o link Ativo ou Hover */
+.atalaia-theme .panel-link:hover, 
+.atalaia-theme .panel-link.active {
+    background: rgba(107, 107, 107, 0.082) !important;
+    border-left: 5px solid #ffffff !important;
+    color: #ffffff !important;
+}
+
+/* AJUSTE PARA O BOTÃO "SAIR" (que fica na parte Branca/final do painel) */
+.atalaia-theme .voltar-home {
+    color: #003366 !important; /* Texto Azul Escuro para ler sobre o fundo branco */
+}
+
+/* --- Responsividade Mobile --- */
+@media (max-width: 768px) {
+    .atalaia-theme {
+        /* Degradê Horizontal no Mobile: Esquerda para Direita */
+        background: linear-gradient(90deg, 
+            #cc0000 0%, 
+            #003366 50%, 
+            #ffffff 100%
+        ) !important;
+        border-right: none;
+        border-top: 2px solid #003366;
+    }
+
+    .atalaia-theme .panel-link.active {
+        border-left: none !important;
+        border-top: 4px solid #003366 !important;
+        color: #003366 !important;
+    }
+}
+
+/* FUNDO EM DEGRADÊ TRICOLOR PARA A SEÇÃO DE CONTATO */
+.bg-tricolor-fju {
+    background: linear-gradient(135deg, 
+        #cc0000 0%,    /* Vermelho */
+        #003366 50%,   /* Azul Marinho */
+        #ffffff 100%   /* Branco */
+    ) !important;
+    padding: 60px 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }

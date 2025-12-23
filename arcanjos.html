@@ -6,98 +6,95 @@
     <title>Arcanjos FJU - Guardiões da Fé</title>
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
 </head>
-<body class="page-arcanjos">
-    
-    <header id="header">
-        <nav>
-            <div class="logo">
-                <img src="img/ARCANJOS.webp" alt="Logo Arcanjos FJU" id="imgLogo">
-            </div>
-            <ul>
-                <li><a href="Index.html">Voltar ao Início</a></li>
-                <li><a href="#sobre">Sobre</a></li>
-                <li><a href="#atuacao">Nossa Atuação</a></li>
-                <li><a href="#galeria">Momentos</a></li>
-                <li><a href="#contato" class="btn-nav">Fazer Parte</a></li>
-            </ul>
-        </nav>
-    </header>
+<body class="page-arcanjos layout-projeto"> 
 
-    <section id="inicio" class="hero">
-        <div class="hero-content">
-            <img src="img/ARCANJOS.webp" alt="Arcanjos FJU" class="logo-central">
-            <h1>Guardiões da <span>Fé.</span></h1>
-            <p>Sua segurança e acolhimento são a nossa missão. Protegendo a juventude.</p>
-            <a href="#contato" class="btn-principal">Junte-se a Nós</a>
-        </div>
-    </section>
-
-    <section id="sobre" class="section-container">
-        <h2 class="titulo-arcanjos">Sobre o Arcanjos FJU</h2>
-        <p class="texto-descricao">O Projeto Arcanjos FJU é a linha de frente na segurança e no acolhimento de todos os jovens. Nossos voluntários atuam com dedicação e responsabilidade em eventos, reuniões e atividades, garantindo um ambiente seguro e receptivo para todos.</p>
-    </section>
-
-    <section id="atuacao" class="bg-arcanjos-claro section-container">
-        <h2 class="titulo-arcanjos">Nossa Atuação</h2>
-        <div class="cards-container">
-            <div class="card">
-                <i class="fas fa-shield-alt"></i>
-                <h3>Segurança em Eventos</h3>
-                <p>Proteção e organização durante grandes encontros e atividades da FJU.</p>
+    <nav class="projeto-panel-nav arcanjos-theme">
+        <div class="panel-container">
+            <div class="panel-header">
+                <img src="img/ARCANJOS.webp" alt="Logo Arcanjos" class="logo-painel">
+                <h3>ARCANJOS</h3>
             </div>
-            <div class="card">
-                <i class="fas fa-hand-holding-heart"></i>
-                <h3>Acolhimento</h3>
-                <p>Receber e orientar os jovens com respeito e atenção.</p>
-            </div>
-            <div class="card">
-                <i class="fas fa-person-walking-luggage"></i>
-                <h3>Controle de Fluxo</h3>
-                <p>Auxílio na entrada, saída e movimentação de pessoas para segurança de todos.</p>
-            </div>
-            <div class="card">
-                <i class="fas fa-headset"></i>
-                <h3>Primeiro Contato</h3>
-                <p>Estar pronto para auxiliar e informar em qualquer necessidade.</p>
-            </div>
-        </div>
-    </section>
-
-    <section id="galeria" class="section-container">
-        <h2 class="titulo-arcanjos">Em Ação</h2>
-        <div class="galeria-grid">
-            <div class="foto-item"><img src="https://images.unsplash.com/photo-1579737156942-124b89814421?q=80&w=400" alt="Arcanjos 1"></div>
-            <div class="foto-item"><img src="https://images.unsplash.com/photo-1628126787680-e37456d98816?q=80&w=400" alt="Arcanjos 2"></div>
-            <div class="foto-item"><img src="https://images.unsplash.com/photo-1582213799654-e0b62b115450?q=80&w=400" alt="Arcanjos 3"></div>
-            <div class="foto-item"><img src="https://images.unsplash.com/photo-1543360216-72410a8e3292?q=80&w=400" alt="Arcanjos 4"></div>
-            <div class="foto-item"><img src="https://images.unsplash.com/photo-1594772076041-3d719a97fb26?q=80&w=400" alt="Arcanjos 5"></div>
-            <div class="foto-item"><img src="https://images.unsplash.com/photo-1626084931885-b1a138031d22?q=80&w=400" alt="Arcanjos 6"></div>
-        </div>
-    </section>
-
-    <section id="contato" class="section-container bg-arcanjos-claro">
-        <div class="form-box">
-            <h2 class="titulo-arcanjos">Seja um Guardião</h2>
-            <p style="margin-bottom: 20px;">Preencha o formulário e saiba como fazer parte dos Arcanjos.</p>
             
-            <form id="formArcanjos">
-                <input type="text" placeholder="Nome Completo" required>
-                <input type="email" placeholder="E-mail de Contato" required>
-                <input type="tel" placeholder="Telefone (Ex: 11 98765-4321)" required>
-                <button type="submit" class="btn-enviar-arcanjos">Quero Proteger</button>
-            </form>
-        </div>
-    </section>
+            <a href="#inicio" class="panel-link active">
+                <i class="fas fa-home"></i>
+                <span>Início</span>
+            </a>
+            <a href="#sobre" class="panel-link">
+                <i class="fas fa-info-circle"></i>
+                <span>Sobre</span>
+            </a>
+            <a href="#atuacao" class="panel-link">
+                <i class="fas fa-shield-alt"></i>
+                <span>Atuação</span>
+            </a>
+            <a href="#galeria" class="panel-link">
+                <i class="fas fa-images"></i>
+                <span>Momentos</span>
+            </a>
+            <a href="#contato" class="panel-link">
+                <i class="fas fa-user-shield"></i>
+                <span>Fazer Parte</span>
+            </a>
 
-    <footer>
-        <div class="social-links">
-            <a href="#"><i class="fab fa-instagram"></i></a>
-            <a href="#"><i class="fab fa-facebook"></i></a>
-            <a href="#"><i class="fab fa-youtube"></i></a>
+            <a href="index.html" class="panel-link voltar-home">
+                <i class="fas fa-arrow-left"></i>
+                <span>Sair</span>
+            </a>
         </div>
-        <p>&copy; 2025 Arcanjos FJU - Todos os direitos reservados.</p>
-    </footer>
+    </nav>
+
+    <main class="main-content-projeto">
+        <section id="inicio" class="hero">
+            <div class="hero-content">
+                <img src="img/ARCANJOS.webp" alt="Arcanjos FJU" class="logo-central">
+                <h1>Guardiões da <span>Fé.</span></h1>
+                <p>Sua segurança e acolhimento são a nossa missão. Protegendo a juventude.</p>
+                <a href="#contato" class="btn-principal">Junte-se a Nós</a>
+            </div>
+        </section>
+
+        <section id="sobre" class="section-container">
+            <h2 class="titulo-arcanjos">Sobre o Arcanjos FJU</h2>
+            <p class="texto-descricao">O Projeto Arcanjos FJU é a linha de frente na segurança e no acolhimento. Nossos voluntários atuam com dedicação em eventos e reuniões, garantindo um ambiente seguro e receptivo para todos.</p>
+        </section>
+
+        <section id="atuacao" class="bg-arcanjos-claro section-container">
+            <h2 class="titulo-arcanjos">Nossa Atuação</h2>
+            <div class="cards-container">
+                <div class="card"><i class="fas fa-shield-alt"></i><h3>Segurança</h3><p>Proteção e organização durante grandes encontros da FJU.</p></div>
+                <div class="card"><i class="fas fa-hand-holding-heart"></i><h3>Acolhimento</h3><p>Receber e orientar os jovens com respeito e atenção.</p></div>
+                <div class="card"><i class="fas fa-person-walking-luggage"></i><h3>Fluxo</h3><p>Auxílio na movimentação de pessoas para segurança de todos.</p></div>
+                <div class="card"><i class="fas fa-headset"></i><h3>Suporte</h3><p>Estar pronto para auxiliar e informar em qualquer necessidade.</p></div>
+            </div>
+        </section>
+
+        <section id="galeria" class="section-container">
+            <h2 class="titulo-arcanjos">Em Ação</h2>
+            <div class="galeria-grid">
+                <div class="foto-item"><img src="https://images.unsplash.com/photo-1579737156942-124b89814421?q=80&w=400" alt="Arcanjos 1"></div>
+                <div class="foto-item"><img src="https://images.unsplash.com/photo-1628126787680-e37456d98816?q=80&w=400" alt="Arcanjos 2"></div>
+                <div class="foto-item"><img src="https://images.unsplash.com/photo-1582213799654-e0b62b115450?q=80&w=400" alt="Arcanjos 3"></div>
+            </div>
+        </section>
+
+        <section id="contato" class="section-container bg-arcanjos-claro">
+            <div class="form-box">
+                <h2 class="titulo-arcanjos">Seja um Guardião</h2>
+                <form id="formArcanjos">
+                    <input type="text" placeholder="Nome Completo" required>
+                    <input type="email" placeholder="E-mail de Contato" required>
+                    <input type="tel" placeholder="Telefone" required>
+                    <button type="submit" class="btn-enviar-arcanjos">Quero Proteger</button>
+                </form>
+            </div>
+        </section>
+
+        <footer>
+            <p>&copy; 2025 Arcanjos FJU - Guardiões da Fé.</p>
+        </footer>
+    </main>
 
     <script src="script.js"></script>
 </body>

@@ -1,64 +1,68 @@
 /* ==========================================================
-   1. CONFIGURAÇÕES E SELETORES
-   ========================================================== */
+    1. CONFIGURAÇÕES E SELETORES
+    ========================================================== */
 const FORMSPREE_ID = "xqezydpd"; 
 const forms = document.querySelectorAll('form[id^="form"]');
 
 /* ==========================================================
-   2. INICIALIZAÇÃO DO CARROSSEL (SPLIDE.JS + VÍDEO)
-   ========================================================== */
+    2. INICIALIZAÇÃO DOS CARROSSEIS (SPLIDE.JS + VÍDEO)
+    ========================================================== */
 document.addEventListener('DOMContentLoaded', function () {
-    const splideElement = document.querySelector('.splide');
     
+    // --- LÓGICA PARA A PÁGINA PRINCIPAL E PÁGINA DE ESPORTES ---
+    const splideElement = document.querySelector('.splide:not(#splide-help)');
     if (splideElement) {
-        // Verifica se estamos na página principal (pelo ID da seção #horarios)
-        const isMainPage = document.querySelector('#horarios'); 
+        const isMainPage = document.querySelector('#horarios') || document.querySelector('#localizacao'); 
 
         if (isMainPage) {
-            // CONFIGURAÇÃO RESPONSIVA PARA VÍDEO (Página Principal)
-            var splide = new Splide('.splide', {
-                heightRatio: 0.5625, // Proporção 16:9 no PC
+            const splideMain = new Splide('.splide', {
+                heightRatio: 0.5, // Reduzido para não ficar gigante
                 cover      : true,
-                video      : {
-                    loop: true,
-                    mute: true,
-                    hideControls: false
-                },
-                breakpoints: {
-                    768: {
-                        heightRatio: 0.70, // No celular o vídeo fica um pouco mais alto para melhor ajuste
-                    }
-                }
+                video      : { loop: true, mute: true, hideControls: false },
+                breakpoints: { 768: { heightRatio: 0.70 } }
             });
-            // Monta obrigatoriamente com a extensão de vídeo carregada no window
-            splide.mount( window.splide.Extensions );
+            splideMain.mount( window.splide.Extensions );
         } else {
-            // CONFIGURAÇÃO PARA FOTOS (Página Esporte / Projetos)
-            var splide = new Splide('.splide', {
+            const splideEsporte = new Splide('.splide', {
                 type    : 'loop',
                 perPage : 3,
                 autoplay: true,
                 interval: 3000,
                 gap     : '20px',
-                arrows  : true,
-                pagination: true,
                 breakpoints: {
-                    1024: {
-                        perPage: 2,
-                    },
-                    768: {
-                        perPage: 1,
-                    }
+                    1024: { perPage: 2 },
+                    768: { perPage: 1 }
                 }
             });
-            splide.mount();
+            splideEsporte.mount();
         }
     }
+
+    // --- LÓGICA PARA A PÁGINA HELP (DIMINUÍDA CONFORME SOLICITADO) ---
+    const splideHelpElement = document.querySelector('#splide-help');
+    if (splideHelpElement) {
+        const splideHelp = new Splide('#splide-help', {
+            type        : 'loop',
+            perPage     : 3,       // Mostra 3 vídeos menores em vez de 1 gigante
+            gap         : '20px',
+            heightRatio : 0.5,     
+            cover       : true,
+            video       : { loop: true, mute: true, hideControls: false },
+            breakpoints : {
+                1024: { perPage: 2 },
+                768 : { perPage: 1, heightRatio: 0.7 } 
+            }
+        });
+        splideHelp.mount( window.splide.Extensions );
+    }
+
+    // --- INICIALIZAR MAPA ---
+    initMapaFJU();
 });
 
 /* ==========================================================
-   3. ENVIO DINÂMICO DE FORMULÁRIOS (FORMSPREE)
-   ========================================================== */
+    3. ENVIO DINÂMICO DE FORMULÁRIOS (FORMSPREE)
+    ========================================================== */
 async function handleSubmit(event) {
     event.preventDefault();
     const form = event.target;
@@ -94,38 +98,33 @@ forms.forEach(form => {
 });
 
 /* ==========================================================
-   4. CONTROLE DE SCROLL E CORES
-   ========================================================== */
+    4. CONTROLE DE SCROLL E CORES
+    ========================================================== */
 window.addEventListener('scroll', function() {
     const header = document.getElementById('header');
-    const sidebar = document.querySelector('.sidebar');
-    
     const isEsporte = document.body.classList.contains('page-esporte');
-    const corSolida = isEsporte ? "#004d2a" : "#002d5b";
-    const corTransparente = isEsporte ? "rgba(0, 77, 42, 0.95)" : "rgba(0, 45, 91, 0.95)";
+    const isHelp = document.body.classList.contains('page-help');
+
+    let corSolida = "#002d5b"; 
+    if (isEsporte) corSolida = "#004d2a"; 
+    if (isHelp) corSolida = "#f1c40f"; 
 
     if (header) {
         if (window.scrollY > 50) {
-            header.style.background = corTransparente;
+            header.style.background = corSolida;
+            header.style.opacity = "0.95";
             header.style.padding = "10px 5%";
         } else {
             header.style.background = corSolida;
+            header.style.opacity = "1";
             header.style.padding = "1rem 5%";
-        }
-    }
-
-    if (sidebar && window.innerWidth <= 768) {
-        if (window.scrollY > 20) {
-            sidebar.style.boxShadow = "0 -4px 10px rgba(0,0,0,0.3)";
-        } else {
-            sidebar.style.boxShadow = "none";
         }
     }
 });
 
 /* ==========================================================
-   5. ROLAGEM SUAVE (SMOOTH SCROLL)
-   ========================================================== */
+    5. ROLAGEM SUAVE (SMOOTH SCROLL)
+    ========================================================== */
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     anchor.addEventListener('click', function (e) {
         const targetId = this.getAttribute('href');
@@ -134,12 +133,41 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         const target = document.querySelector(targetId);
         if (target) {
             e.preventDefault();
-            target.scrollIntoView({
-                behavior: 'smooth'
-            });
+            target.scrollIntoView({ behavior: 'smooth' });
             
             document.querySelectorAll('.sidebar-nav a').forEach(nav => nav.classList.remove('active'));
             this.classList.add('active');
         }
     });
 });
+
+/* ==========================================================
+    6. LÓGICA DO MAPA (LOCALIZAÇÃO IMEDIATA)
+    ========================================================== */
+function initMapaFJU() {
+    const mapContainer = document.getElementById('map');
+    if (!mapContainer) return;
+
+    // Mapa base
+    const map = L.map('map').setView([-14.235, -51.925], 4);
+
+    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+        attribution: '© OpenStreetMap'
+    }).addTo(map);
+
+    // Assim que o GPS liga, ele busca a Universal
+    if (navigator.geolocation) {
+        navigator.geolocation.getCurrentPosition((position) => {
+            const lat = position.coords.latitude;
+            const lng = position.coords.longitude;
+            
+            map.setView([lat, lng], 15); 
+
+            L.marker([lat, lng]).addTo(map)
+                .bindPopup('<b>Você está aqui!</b><br><a href="https://www.google.com/maps/search/Igreja+Universal/@' + lat + ',' + lng + ',15z" target="_blank">Clique para ver as igrejas próximas</a>')
+                .openPopup();
+        }, () => {
+            console.log("GPS desativado.");
+        });
+    }
+}

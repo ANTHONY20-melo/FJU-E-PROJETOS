@@ -6,104 +6,109 @@
     <title>Mídia FJU - Comunicando a Fé</title>
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
 </head>
-<body class="page-midia">
-    
-    <header id="header">
-        <nav>
-            <div class="logo">
-                <img src="img/MIDIA_1.webp" alt="Logo Mídia FJU" id="imgLogo">
-            </div>
-            <ul>
-                <li><a href="Index.html">Voltar ao Início</a></li>
-                <li><a href="#sobre">Sobre</a></li>
-                <li><a href="#atividades">Departamentos</a></li>
-                <li><a href="#galeria">Galeria</a></li>
-                <li><a href="#inscricao" class="btn-nav">Inscrição</a></li>
-            </ul>
-        </nav>
-    </header>
+<body class="page-midia layout-projeto"> 
 
-    <section id="inicio" class="hero">
-        <div class="hero-content">
-            <img src="img/MIDIA_1.webp" alt="Mídia FJU" class="logo-central">
-            <h1>Comunicando a <span>Fé.</span></h1>
-            <p>Use a tecnologia e a criatividade para espalhar boas notícias pelo mundo.</p>
-            <a href="#inscricao" class="btn-principal">Fazer Parte da Equipe</a>
-        </div>
-    </section>
-
-    <section id="sobre" class="section-container">
-        <h2 class="titulo-azul-midia">Sobre o Mídia FJU</h2>
-        <p class="texto-descricao">O projeto Mídia FJU é a voz da juventude conectada. Através do jornalismo, design, fotografia e redes sociais, mostramos o trabalho da FJU e levamos mensagens de esperança de forma criativa e profissional para todos os canais digitais.</p>
-    </section>
-
-    <section id="atividades" class="bg-light-blue-midia section-container">
-        <h2 class="titulo-azul-midia">Nossos Departamentos</h2>
-        <div class="cards-container">
-            <div class="card">
-                <i class="fas fa-newspaper"></i>
-                <h3>Jornalismo</h3>
-                <p>Cobertura de eventos, redação de matérias e entrevistas exclusivas.</p>
+    <nav class="projeto-panel-nav midia-theme">
+        <div class="panel-container">
+            <div class="panel-header">
+                <img src="img/MIDIA_1.webp" alt="Logo Mídia" class="logo-painel">
+                <h3>MÍDIA</h3>
             </div>
-            <div class="card">
-                <i class="fas fa-share-nodes"></i>
-                <h3>Social Media</h3>
-                <p>Gestão de redes sociais, engajamento e estratégias digitais.</p>
-            </div>
-            <div class="card">
-                <i class="fas fa-pen-nib"></i>
-                <h3>Design Gráfico</h3>
-                <p>Criação de artes visuais, logotipos e identidade para os projetos.</p>
-            </div>
-            <div class="card">
-                <i class="fas fa-video"></i>
-                <h3>Audiovisual</h3>
-                <p>Captação de imagens, edição de vídeos e transmissões ao vivo.</p>
-            </div>
-        </div>
-    </section>
-
-    <section id="galeria" class="section-container">
-        <h2 class="titulo-azul-midia">Bastidores e Ações</h2>
-        <div class="galeria-grid">
-            <div class="foto-item"><img src="https://images.unsplash.com/photo-1516035069371-29a1b244cc32?q=80&w=400" alt="Midia 1"></div>
-            <div class="foto-item"><img src="https://images.unsplash.com/photo-1492724441997-5dc865305da7?q=80&w=400" alt="Midia 2"></div>
-            <div class="foto-item"><img src="https://images.unsplash.com/photo-1542744173-8e7e53415bb0?q=80&w=400" alt="Midia 3"></div>
-            <div class="foto-item"><img src="https://images.unsplash.com/photo-1551434678-e076c223a692?q=80&w=400" alt="Midia 4"></div>
-            <div class="foto-item"><img src="https://images.unsplash.com/photo-1460518451285-cd7ba7969e43?q=80&w=400" alt="Midia 5"></div>
-            <div class="foto-item"><img src="https://images.unsplash.com/photo-1523580494863-6f3031224c94?q=80&w=400" alt="Midia 6"></div>
-        </div>
-    </section>
-
-    <section id="inscricao" class="section-container bg-light-blue-midia">
-        <div class="form-box">
-            <h2 class="titulo-azul-midia">Faça sua Inscrição</h2>
-            <p style="margin-bottom: 20px;">Qual é a sua área criativa? Inscreva-se abaixo!</p>
             
-            <form id="formMidia">
-                <input type="text" placeholder="Nome Completo" required>
-                <input type="email" placeholder="E-mail" required>
-                <select required>
-                    <option value="" disabled selected>Área de Interesse</option>
-                    <option value="Jornalismo">Jornalismo</option>
-                    <option value="Social Media">Social Media</option>
-                    <option value="Design">Design Gráfico</option>
-                    <option value="Audiovisual">Audiovisual</option>
-                </select>
-                <button type="submit" class="btn-enviar-midia">Entrar para o Time</button>
-            </form>
-        </div>
-    </section>
+            <a href="#inicio" class="panel-link active">
+                <i class="fas fa-home"></i>
+                <span>Início</span>
+            </a>
+            <a href="#sobre" class="panel-link">
+                <i class="fas fa-info-circle"></i>
+                <span>Sobre</span>
+            </a>
+            <a href="#atividades" class="panel-link">
+                <i class="fas fa-camera"></i>
+                <span>Departamentos</span>
+            </a>
+            <a href="#galeria" class="panel-link">
+                <i class="fas fa-images"></i>
+                <span>Galeria</span>
+            </a>
+            <a href="#inscricao" class="panel-link">
+                <i class="fas fa-edit"></i>
+                <span>Inscrição</span>
+            </a>
 
-    <footer>
-        <div class="social-links">
-            <a href="#"><i class="fab fa-instagram"></i></a>
-            <a href="#"><i class="fab fa-facebook"></i></a>
-            <a href="#"><i class="fab fa-youtube"></i></a>
+            <a href="index.html" class="panel-link voltar-home">
+                <i class="fas fa-arrow-left"></i>
+                <span>Sair</span>
+            </a>
         </div>
-        <p>&copy; 2025 Mídia FJU - Todos os direitos reservados.</p>
-    </footer>
+    </nav>
+
+    <main class="main-content-projeto">
+        <section id="inicio" class="hero">
+            <div class="hero-content">
+                <img src="img/MIDIA_1.webp" alt="Mídia FJU" class="logo-central">
+                <h1>Comunicando a <span>Fé.</span></h1>
+                <p>Use a tecnologia e a criatividade para espalhar boas notícias pelo mundo.</p>
+                <a href="#inscricao" class="btn-principal">Fazer Parte da Equipe</a>
+            </div>
+        </section>
+
+        <section id="sobre" class="section-container">
+            <h2 class="titulo-azul-midia">Sobre o Mídia FJU</h2>
+            <p class="texto-descricao">O projeto Mídia FJU é a voz da juventude conectada. Através do jornalismo, design, fotografia e redes sociais, mostramos o trabalho da FJU e levamos mensagens de esperança de forma profissional.</p>
+        </section>
+
+        <section id="atividades" class="bg-light-blue-midia section-container">
+            <h2 class="titulo-azul-midia">Nossos Departamentos</h2>
+            <div class="cards-container">
+                <div class="card"><i class="fas fa-newspaper"></i><h3>Jornalismo</h3><p>Cobertura de eventos e matérias exclusivas.</p></div>
+                <div class="card"><i class="fas fa-share-nodes"></i><h3>Social Media</h3><p>Gestão de redes sociais e estratégias digitais.</p></div>
+                <div class="card"><i class="fas fa-pen-nib"></i><h3>Design Gráfico</h3><p>Criação de artes e identidade visual.</p></div>
+                <div class="card"><i class="fas fa-video"></i><h3>Audiovisual</h3><p>Edição de vídeos e transmissões ao vivo.</p></div>
+            </div>
+        </section>
+
+        <section id="galeria" class="section-container">
+            <h2 class="titulo-azul-midia">Bastidores e Ações</h2>
+            <div class="galeria-grid">
+                <div class="foto-item"><img src="https://images.unsplash.com/photo-1516035069371-29a1b244cc32?q=80&w=400" alt="Midia 1"></div>
+                <div class="foto-item"><img src="https://images.unsplash.com/photo-1492724441997-5dc865305da7?q=80&w=400" alt="Midia 2"></div>
+                <div class="foto-item"><img src="https://images.unsplash.com/photo-1542744173-8e7e53415bb0?q=80&w=400" alt="Midia 3"></div>
+                <div class="foto-item"><img src="https://images.unsplash.com/photo-1551434678-e076c223a692?q=80&w=400" alt="Midia 4"></div>
+                <div class="foto-item"><img src="https://images.unsplash.com/photo-1460518451285-cd7ba7969e43?q=80&w=400" alt="Midia 5"></div>
+                <div class="foto-item"><img src="https://images.unsplash.com/photo-1523580494863-6f3031224c94?q=80&w=400" alt="Midia 6"></div>
+            </div>
+        </section>
+
+        <section id="inscricao" class="section-container bg-light-blue-midia">
+            <div class="form-box">
+                <h2 class="titulo-azul-midia">Faça sua Inscrição</h2>
+                <form id="formMidia">
+                    <input type="text" placeholder="Nome Completo" required>
+                    <input type="email" placeholder="E-mail" required>
+                    <select required>
+                        <option value="" disabled selected>Área de Interesse</option>
+                        <option value="Jornalismo">Jornalismo</option>
+                        <option value="Social Media">Social Media</option>
+                        <option value="Design">Design Gráfico</option>
+                        <option value="Audiovisual">Audiovisual</option>
+                    </select>
+                    <button type="submit" class="btn-enviar-midia">Entrar para o Time</button>
+                </form>
+            </div>
+        </section>
+
+        <footer>
+            <div class="social-links">
+                <a href="#"><i class="fab fa-instagram"></i></a>
+                <a href="#"><i class="fab fa-facebook"></i></a>
+                <a href="#"><i class="fab fa-youtube"></i></a>
+            </div>
+            <p>&copy; 2025 Mídia FJU - Todos os direitos reservados.</p>
+        </footer>
+    </main>
 
     <script src="script.js"></script>
 </body>
