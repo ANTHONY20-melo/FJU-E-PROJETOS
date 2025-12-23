@@ -1948,3 +1948,30 @@ body.layout-sidebar {
     align-items: center;
 }
 .card-retangular i { font-size: 2.5rem; color: #00a859; margin-right: 20px; }
+/* Responsividade do Carrossel de Vídeo */
+#horarios .splide {
+    width: 100%;
+    max-width: 900px; /* Limita a largura no PC para não ficar gigante */
+    margin: 20px auto;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+}
+
+.splide__video__play {
+    background: #ff0000 !important; /* Cor do botão play igual ao YouTube */
+}
+
+/* Ajustes para Celular */
+@media (max-width: 768px) {
+    #horarios .splide {
+        max-width: 100%;
+        /* Ajusta a proporção para não ficar espremido no celular */
+        height: auto !important; 
+    }
+    
+    .splide__slide img {
+        height: 250px; /* Altura fixa confortável para o polegar no mobile */
+        object-fit: cover;
+    }
+}

@@ -1,52 +1,74 @@
 /* ==========================================================
-   CONFIGURAÇÕES E SELETORES
+   1. CONFIGURAÇÕES E SELETORES
    ========================================================== */
-const formFJU = document.getElementById("formFJU");
-const btnEnviar = document.getElementById("btnEnviar");
-const btnMobile = document.getElementById('btn-mobile');
-const nav = document.getElementById('menu');
-
-// ID do Formspree (Troque se necessário)
 const FORMSPREE_ID = "xqezydpd"; 
+const forms = document.querySelectorAll('form[id^="form"]');
 
 /* ==========================================================
-   1. MENU MOBILE (ABRIR / FECHAR)
+   2. INICIALIZAÇÃO DO CARROSSEL (SPLIDE.JS + VÍDEO)
    ========================================================== */
-function toggleMenu(event) {
-    if (event.type === 'touchstart') event.preventDefault();
+document.addEventListener('DOMContentLoaded', function () {
+    const splideElement = document.querySelector('.splide');
     
-    nav.classList.toggle('active');
-    
-    // Acessibilidade: Indica se o menu está expandido
-    const active = nav.classList.contains('active');
-    event.currentTarget.setAttribute('aria-expanded', active);
-}
+    if (splideElement) {
+        // Verifica se estamos na página principal (pelo ID da seção #horarios)
+        const isMainPage = document.querySelector('#horarios'); 
 
-if (btnMobile) {
-    btnMobile.addEventListener('click', toggleMenu);
-    btnMobile.addEventListener('touchstart', toggleMenu);
-}
-
-// Fechar menu automaticamente ao clicar em um link (Melhora UX no celular)
-document.querySelectorAll('#menu a').forEach(link => {
-    link.addEventListener('click', () => {
-        nav.classList.remove('active');
-    });
+        if (isMainPage) {
+            // CONFIGURAÇÃO RESPONSIVA PARA VÍDEO (Página Principal)
+            var splide = new Splide('.splide', {
+                heightRatio: 0.5625, // Proporção 16:9 no PC
+                cover      : true,
+                video      : {
+                    loop: true,
+                    mute: true,
+                    hideControls: false
+                },
+                breakpoints: {
+                    768: {
+                        heightRatio: 0.70, // No celular o vídeo fica um pouco mais alto para melhor ajuste
+                    }
+                }
+            });
+            // Monta obrigatoriamente com a extensão de vídeo carregada no window
+            splide.mount( window.splide.Extensions );
+        } else {
+            // CONFIGURAÇÃO PARA FOTOS (Página Esporte / Projetos)
+            var splide = new Splide('.splide', {
+                type    : 'loop',
+                perPage : 3,
+                autoplay: true,
+                interval: 3000,
+                gap     : '20px',
+                arrows  : true,
+                pagination: true,
+                breakpoints: {
+                    1024: {
+                        perPage: 2,
+                    },
+                    768: {
+                        perPage: 1,
+                    }
+                }
+            });
+            splide.mount();
+        }
+    }
 });
 
 /* ==========================================================
-   2. ENVIO DO FORMULÁRIO (FORMSPREE)
+   3. ENVIO DINÂMICO DE FORMULÁRIOS (FORMSPREE)
    ========================================================== */
 async function handleSubmit(event) {
     event.preventDefault();
+    const form = event.target;
+    const btn = form.querySelector('button[type="submit"]');
+    const originalText = btn.innerText;
     
-    // Feedback visual de carregamento
-    if(btnEnviar) {
-        btnEnviar.innerText = "A Enviar...";
-        btnEnviar.disabled = true;
-    }
+    btn.innerText = "A Enviar...";
+    btn.disabled = true;
 
-    const data = new FormData(event.target);
+    const data = new FormData(form);
     
     try {
         const response = await fetch(`https://formspree.io/f/${FORMSPREE_ID}`, {
@@ -56,50 +78,68 @@ async function handleSubmit(event) {
         });
 
         if (response.ok) {
-            // Sucesso: Redireciona para página de agradecimento
             window.location.href = "obrigado.html"; 
         } else {
-            // Erro de resposta do servidor
             throw new Error("Erro no servidor");
         }
     } catch (error) {
         alert("Ocorreu um erro. Verifique sua conexão e tente novamente.");
-        if(btnEnviar) {
-            btnEnviar.innerText = "Enviar Dados";
-            btnEnviar.disabled = false;
-        }
+        btn.innerText = originalText;
+        btn.disabled = false;
     }
 }
 
-if (formFJU) {
-    formFJU.addEventListener("submit", handleSubmit);
-}
+forms.forEach(form => {
+    form.addEventListener("submit", handleSubmit);
+});
 
 /* ==========================================================
-   3. EFEITOS DE ROLAGEM (SCROLL)
+   4. CONTROLE DE SCROLL E CORES
    ========================================================== */
 window.addEventListener('scroll', function() {
     const header = document.getElementById('header');
+    const sidebar = document.querySelector('.sidebar');
     
-    // Encolher o menu ao rolar para baixo
-    if (window.scrollY > 50) {
-        header.style.padding = "5px 5%"; // Reduz altura
-        header.style.background = "rgba(0, 45, 91, 0.95)"; // Fica levemente transparente
-    } else {
-        header.style.padding = "1rem 5%"; // Volta ao normal
-        header.style.background = "#002d5b"; // Cor sólida
+    const isEsporte = document.body.classList.contains('page-esporte');
+    const corSolida = isEsporte ? "#004d2a" : "#002d5b";
+    const corTransparente = isEsporte ? "rgba(0, 77, 42, 0.95)" : "rgba(0, 45, 91, 0.95)";
+
+    if (header) {
+        if (window.scrollY > 50) {
+            header.style.background = corTransparente;
+            header.style.padding = "10px 5%";
+        } else {
+            header.style.background = corSolida;
+            header.style.padding = "1rem 5%";
+        }
+    }
+
+    if (sidebar && window.innerWidth <= 768) {
+        if (window.scrollY > 20) {
+            sidebar.style.boxShadow = "0 -4px 10px rgba(0,0,0,0.3)";
+        } else {
+            sidebar.style.boxShadow = "none";
+        }
     }
 });
 
-// Rolagem Suave (Smooth Scroll) para links internos
+/* ==========================================================
+   5. ROLAGEM SUAVE (SMOOTH SCROLL)
+   ========================================================== */
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     anchor.addEventListener('click', function (e) {
-        e.preventDefault();
-        const target = document.querySelector(this.getAttribute('href'));
+        const targetId = this.getAttribute('href');
+        if (targetId === "#") return;
+        
+        const target = document.querySelector(targetId);
         if (target) {
+            e.preventDefault();
             target.scrollIntoView({
                 behavior: 'smooth'
             });
+            
+            document.querySelectorAll('.sidebar-nav a').forEach(nav => nav.classList.remove('active'));
+            this.classList.add('active');
         }
     });
 });
