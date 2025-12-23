@@ -2414,3 +2414,38 @@ body.layout-sidebar {
     justify-content: center;
     align-items: center;
 }
+/* Garante que todos os ícones apareçam no Mobile */
+@media (max-width: 768px) {
+    .projeto-panel-nav .panel-link {
+        display: flex;
+        flex-direction: column; /* Ícone em cima, texto embaixo */
+        align-items: center;
+        justify-content: center;
+        font-size: 10px; /* Texto menor para caber tudo */
+        padding: 5px 0;
+    }
+
+    .projeto-panel-nav .panel-link i {
+        display: block !important; /* Força o ícone a aparecer */
+        font-size: 20px; /* Tamanho ideal para o toque */
+        margin-bottom: 3px;
+    }
+
+    /* Ajuste específico para o texto do link "Fazer Parte" não quebrar linha */
+    .projeto-panel-nav .panel-link span {
+        white-space: nowrap;
+    }
+}
+
+/* Estilo padrão para os ícones (Desktop e Mobile) */
+.panel-link i {
+    width: 25px;
+    text-align: center;
+    margin-right: 10px; /* Espaço no Desktop */
+}
+
+@media (max-width: 768px) {
+    .panel-link i {
+        margin-right: 0; /* Remove espaço lateral no Mobile */
+    }
+}
