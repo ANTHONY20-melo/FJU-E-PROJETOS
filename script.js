@@ -1,12 +1,12 @@
 /* ==========================================================
     1. CONFIGURAÇÕES E SELETORES
-    ========================================================== */
+   ========================================================== */
 const FORMSPREE_ID = "xqezydpd"; 
 const forms = document.querySelectorAll('form[id^="form"]');
 
 /* ==========================================================
     2. INICIALIZAÇÃO DOS CARROSSEIS (SPLIDE.JS + VÍDEO)
-    ========================================================== */
+   ========================================================== */
 document.addEventListener('DOMContentLoaded', function () {
     
     // Carrossel Principal e Projetos
@@ -60,8 +60,8 @@ document.addEventListener('DOMContentLoaded', function () {
 });
 
 /* ==========================================================
-    3. ENVIO DINÂMICO E REDIRECIONAMENTO PERSONALIZADO
-    ========================================================== */
+    3. ENVIO DINÂMICO E REDIRECIONAMENTO INTELIGENTE
+   ========================================================== */
 async function handleSubmit(event) {
     event.preventDefault();
     const form = event.target;
@@ -82,26 +82,21 @@ async function handleSubmit(event) {
         });
 
         if (response.ok) {
-            // Lógica de redirecionamento baseada na classe do body
-            if (bodyClass.includes('page-esporte')) {
-                window.location.href = "obrigado-esporte.html";
-            } else if (bodyClass.includes('page-midia')) {
-                window.location.href = "obrigado-midia.html";
-            } else if (bodyClass.includes('page-uniforca')) {
-                window.location.href = "obrigado-uniforca.html";
-            } else if (bodyClass.includes('page-atalaia')) {
-                window.location.href = "obrigado-atalaia.html";
-            } else if (bodyClass.includes('page-arcanjos')) {
-                window.location.href = "obrigado-arcanjos.html";
-            } else if (bodyClass.includes('page-universitarios')) {
-                window.location.href = "obrigado-universitarios.html";
-            } else if (bodyClass.includes('page-assistentes')) {
-                window.location.href = "obrigado-assistentes.html";
-            } else if (bodyClass.includes('page-cultura')) {
-                window.location.href = "obrigado.html"; 
-            } else {
-                window.location.href = "obrigado.html"; // Fallback geral
-            }
+            // Lógica Unificada: Redireciona para obrigado.html com o parâmetro do projeto (?p=)
+            let projetoParam = "";
+
+            if (bodyClass.includes('page-esporte')) projetoParam = "?p=esporte";
+            else if (bodyClass.includes('page-midia')) projetoParam = "?p=midia";
+            else if (bodyClass.includes('page-uniforca')) projetoParam = "?p=uniforca";
+            else if (bodyClass.includes('page-atalaia')) projetoParam = "?p=atalaia";
+            else if (bodyClass.includes('page-arcanjos')) projetoParam = "?p=arcanjos";
+            else if (bodyClass.includes('page-universitarios')) projetoParam = "?p=universitarios";
+            else if (bodyClass.includes('page-assistentes')) projetoParam = "?p=assistentes";
+            else if (bodyClass.includes('page-cultura')) projetoParam = "?p=cultura";
+
+            // Envia o usuário para a tela dinâmica
+            window.location.href = "obrigado.html" + projetoParam;
+            
         } else {
             const result = await response.json();
             alert(result.error || "Erro no envio. Verifique se o formulário foi ativado no Formspree.");
@@ -121,7 +116,7 @@ forms.forEach(form => {
 
 /* ==========================================================
     4. ROLAGEM SUAVE (SMOOTH SCROLL)
-    ========================================================== */
+   ========================================================== */
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     anchor.addEventListener('click', function (e) {
         const targetId = this.getAttribute('href');
@@ -140,7 +135,7 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
 
 /* ==========================================================
     5. LÓGICA DO MAPA (UNIFICADA)
-    ========================================================== */
+   ========================================================== */
 function initMapaFJU() {
     const mapContainer = document.getElementById('map');
     if (!mapContainer) return;

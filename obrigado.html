@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inscrição Confirmada - FJU</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body class="bg-obrigado-fju">
+
+    <div class="section-container-obrigado">
+        <div style="display: flex; height: 8px; width: 100%; position: absolute; top: 0; left: 0; border-radius: 20px 20px 0 0; overflow: hidden;">
+            <div style="flex: 1; background: #cc0000;"></div>
+            <div style="flex: 1; background: #003366;"></div>
+            <div style="flex: 1; background: #ffffff; border-bottom: 1px solid #ddd;"></div>
+        </div>
+
+        <div style="margin-top: 20px;">
+            <div id="logo-projeto">
+                <i class="fas fa-check-circle" style="font-size: 80px; color: #2ecc71; margin-bottom: 20px;"></i>
+            </div>
+            
+            <h1 id="titulo-dinamico" style="color: #003366; font-size: 2.2rem; margin-bottom: 15px; font-weight: 800;">
+                Tudo Pronto!
+            </h1>
+            
+            <p id="mensagem-dinamica" style="color: #555; font-size: 1.1rem; line-height: 1.6; margin-bottom: 30px;">
+                A tua inscrição foi realizada com sucesso. <br>
+                A partir de agora, tu fazes parte desta família! <br>
+                <strong>Fica atento ao teu WhatsApp</strong>, pois entraremos em contacto muito em breve.
+            </p>
+
+            <div style="border-top: 1px solid #eee; padding-top: 25px;">
+                <a href="index.html" class="btn-principal" style="display: inline-block; background: linear-gradient(90deg, #cc0000 0%, #003366 100%); color: white; padding: 15px 40px; border-radius: 50px; text-decoration: none; font-weight: bold; text-transform: uppercase; transition: transform 0.3s;">
+                    Voltar ao Início
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Lógica para capturar o projeto via URL (Ex: obrigado.html?p=esporte)
+        const urlParams = new URLSearchParams(window.location.search);
+        const projeto = urlParams.get('p');
+
+        const informacoes = {
+            'esporte': {
+                titulo: 'Nascido para Vencer!',
+                msg: 'Prepara as sapatilhas! O teu talento agora tem um propósito maior. Em breve entraremos em contacto para os treinos.',
+                img: 'img/ESPORTE.webp'
+            },
+            'midia': {
+                titulo: 'Foco na Missão!',
+                msg: 'A tua criatividade vai ajudar a salvar muitas vidas. Nossa equipe de comunicação entrará em contacto para te integrar.',
+                img: 'img/MIDIA.webp'
+            },
+            'atalaia': {
+                titulo: 'Bem-vindo, Atalaia!',
+                msg: 'Sua voz agora ecoa a salvação. Um coordenador falará contigo em breve para sua primeira escala de evangelização.',
+                img: 'img/ATALAIA.webp'
+            },
+            'uniforca': {
+                titulo: 'Força e Honra!',
+                msg: 'Pronto para servir? Recebemos teus dados e logo serás convocado para nossa equipe de logística e elite.',
+                img: 'img/UNIFORCA.webp'
+            },
+            'arcanjos': {
+                titulo: 'Pronto para o Resgate!',
+                msg: 'Você deu o primeiro passo para salvar uma vida. Nossa equipe de Arcanjos entrará em contato via WhatsApp.',
+                img: 'img/ARCANJOS.webp'
+            },
+            'universitarios': {
+                titulo: 'Visão de Águia!',
+                msg: 'Formar jovens visionários é o nosso foco. Prepare-se para grandes desafios acadêmicos e espirituais.',
+                img: 'img/UNIVERSITARIOS.webp'
+            },
+            'assistentes': {
+                titulo: 'Servo por Amor!',
+                msg: 'Sua ajuda é fundamental para a FJU. Em breve estarás connosco na linha da frente servindo a quem precisa.',
+                img: 'img/ASSISTENTES.webp'
+            },
+            'cultura': {
+                titulo: 'A Arte de Salvar!',
+                msg: 'O palco espera por você! Recebemos sua inscrição e em breve teremos os ensaios.',
+                img: 'img/CULTURA.webp'
+            }
+        };
+
+        if (projeto && informacoes[projeto]) {
+            const dados = informacoes[projeto];
+            document.getElementById('titulo-dinamico').innerText = dados.titulo;
+            document.getElementById('mensagem-dinamica').innerHTML = dados.msg;
+            document.getElementById('logo-projeto').innerHTML = `<img src="${dados.img}" alt="Logo" style="width: 140px; margin-bottom: 20px;">`;
+            document.title = "Inscrição Confirmada - " + projeto.toUpperCase();
+        }
+    </script>
+</body>
+</html>

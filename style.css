@@ -2643,3 +2643,95 @@ body.layout-sidebar {
     transform: translateY(-3px);
     box-shadow: 0 5px 15px rgba(204, 0, 0, 0.3);
 }
+/* Fundo Tricolor para as telas de obrigado */
+.bg-obrigado-fju {
+    background: linear-gradient(135deg, #cc0000 0%, #003366 50%, #ffffff 100%) !important;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    margin: 0;
+    font-family: 'Poppins', sans-serif;
+}
+
+/* Contentor do Cartão */
+.section-container-obrigado {
+    background: white;
+    padding: 40px;
+    border-radius: 20px;
+    box-shadow: 0 15px 35px rgba(0,0,0,0.3);
+    max-width: 500px;
+    width: 90%;
+    text-align: center;
+    position: relative;
+    animation: slideUp 0.5s ease-out;
+}
+
+@keyframes slideUp {
+    from { opacity: 0; transform: translateY(30px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+/* ==========================================================
+    ESTILO DA TELA DE OBRIGADO (DINÂMICA)
+   ========================================================== */
+
+/* Fundo tricolor FJU com degradê suave */
+.bg-obrigado-fju {
+    background: linear-gradient(135deg, #cc0000 0%, #003366 50%, #f4f4f4 100%) !important;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    margin: 0;
+    font-family: 'Poppins', sans-serif; /* Ou a fonte que você já usa */
+}
+
+/* Cartão central onde aparece a mensagem */
+.section-container-obrigado {
+    background: white;
+    padding: 40px 20px;
+    border-radius: 20px;
+    box-shadow: 0 15px 35px rgba(0,0,0,0.3);
+    max-width: 500px;
+    width: 90%;
+    text-align: center;
+    position: relative;
+    overflow: hidden; /* Garante que as faixas do topo não vazem a borda */
+    animation: surgindo 0.5s ease-out;
+}
+
+/* Animação para a tela não aparecer de uma vez */
+@keyframes surgindo {
+    from { opacity: 0; transform: translateY(30px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* Ajuste do botão de voltar dentro da tela de obrigado */
+.section-container-obrigado .btn-principal {
+    display: inline-block;
+    background: linear-gradient(90deg, #cc0000 0%, #003366 100%);
+    color: white;
+    padding: 15px 40px;
+    border-radius: 50px;
+    text-decoration: none;
+    font-weight: bold;
+    text-transform: uppercase;
+    transition: transform 0.3s, box-shadow 0.3s;
+    border: none;
+    cursor: pointer;
+}
+
+.section-container-obrigado .btn-principal:hover {
+    transform: scale(1.05);
+    box-shadow: 0 5px 15px rgba(204, 0, 0, 0.4);
+}
+
+/* Responsividade para celulares pequenos */
+@media (max-width: 480px) {
+    .section-container-obrigado h1 {
+        font-size: 1.8rem;
+    }
+    .section-container-obrigado p {
+        font-size: 1rem;
+    }
+}
