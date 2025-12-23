@@ -6,6 +6,7 @@
     <title>FJU - Força Jovem Universal</title>
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
 </head>
 <body class="layout-sidebar">
 
@@ -17,17 +18,15 @@
         <nav class="sidebar-nav">
             <ul>
                 <li><a href="#inicio"><i class="fas fa-home"></i> <span>Início</span></a></li>
-                <li><a href="#projetos"><i class="fas fa-grid-2"></i> <span>Projetos</span></a></li>
+                <li><a href="#projetos"><i class="fas fa-th-large"></i> <span>Projetos</span></a></li>
                 <li><a href="#horarios"><i class="fas fa-clock"></i> <span>Horários</span></a></li>
-                <li><a href="#inscricao" class="btn-sidebar"><span>Fazer Parte</span></a></li>
+                <li><a href="#ajuda"><i class="fas fa-question-circle"></i> <span>Central de Ajuda</span></a></li>
+                <li><a href="#inscricao" class="btn-sidebar"><i class="fas fa-user-plus"></i> <span>Fazer Parte</span></a></li>
             </ul>
         </nav>
 
         <div class="sidebar-footer">
-            <div class="social-links-sidebar">
-                <a href="#"><i class="fab fa-instagram"></i></a>
-                <a href="#"><i class="fab fa-youtube"></i></a>
-            </div>
+            <p>FJU Oficial</p>
         </div>
     </aside>
 
@@ -58,26 +57,50 @@
         </section>
 
         <section id="horarios" class="section-container bg-azul">
-            <h2 style="color: #fff;">Encontros FJU</h2>
-            <p style="color: #fff; margin-bottom: 30px;">Vê o horário do "Encontro Jovem" no teu estado:</p>
-            <div class="horarios-grid">
-                <div class="horario-item"><strong>São Paulo</strong><span>Sábado às 16h</span></div>
-                <div class="horario-item"><strong>Rio de Janeiro</strong><span>Sábado às 17h</span></div>
-                <div class="horario-item"><strong>Bahia</strong><span>Sábado às 16h</span></div>
-                <div class="horario-item"><strong>Portugal</strong><span>Sábado às 16h</span></div>
+            <div class="horarios-content">
+                <div class="horarios-text">
+                    <h2 class="text-white">Encontros FJU</h2>
+                    <p class="text-white">Encontre a FJU mais próxima de você. O "Encontro Jovem" acontece todos os finais de semana.</p>
+                    
+                    <div class="horarios-grid">
+                        <div class="horario-card-pro">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <div><strong>São Paulo</strong><span>Sábado às 16h</span></div>
+                        </div>
+                        <div class="horario-card-pro">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <div><strong>Rio de Janeiro</strong><span>Sábado às 17h</span></div>
+                        </div>
+                        <div class="horario-card-pro">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <div><strong>Bahia</strong><span>Sábado às 16h</span></div>
+                        </div>
+                        <div class="horario-card-pro">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <div><strong>Portugal</strong><span>Sábado às 16h</span></div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="mapa-container">
+                    <iframe 
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3658.12164478832!2d-46.63852262386121!3d-23.546114261179672!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94ce59ac9f39f379%3A0x6b8606c174ec6248!2sTemplo%20de%20Salom%C3%A3o!5e0!3m2!1spt-BR!2sbr!4v1700000000000!5m2!1spt-BR!2sbr" 
+                        width="100%" height="300" style="border:0; border-radius: 15px;" allowfullscreen="" loading="lazy">
+                    </iframe>
+                </div>
             </div>
         </section>
 
         <section id="ajuda" class="section-container bg-help">
             <img src="img/HELP.webp" alt="Help FJU" class="logo-help">
-            <h2>Não Desistas!</h2>
-            <p>Tens alguém pronto para te ouvir sem julgamentos. O projeto Help está disponível 24h.</p>
+            <h2>Não Desista!</h2>
+            <p>Tem alguém pronto para te ouvir sem julgamentos. O projeto Help está disponível 24h.</p>
             <a href="https://wa.me/seunumeroaqui" class="btn-help"><i class="fab fa-whatsapp"></i> Conversar no WhatsApp</a>
         </section>
 
         <section id="inscricao" class="section-container">
             <div class="form-box">
-                <h2 class="titulo-fju" style="margin-bottom: 15px;">Participa</h2>
+                <h2 class="titulo-fju">Participa</h2>
                 <form id="formFJU">
                     <input type="text" name="nome" placeholder="Nome Completo" required>
                     <input type="tel" name="whatsapp" placeholder="Teu WhatsApp" required>
