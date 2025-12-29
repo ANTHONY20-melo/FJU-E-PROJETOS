@@ -38,7 +38,7 @@ document.addEventListener('DOMContentLoaded', function () {
         }
     }
 
-    // Carrossel Página Help (Vídeos Menores)
+    // Carrossel Página Help
     const splideHelpElement = document.querySelector('#splide-help');
     if (splideHelpElement) {
         const splideHelp = new Splide('#splide-help', {
@@ -60,54 +60,44 @@ document.addEventListener('DOMContentLoaded', function () {
 });
 
 /* ==========================================================
-    3. ENVIO DINÂMICO E REDIRECIONAMENTO INTELIGENTE
+    3. ENVIO E REDIRECIONAMENTO INSTANTÂNEO (ULTRA-RÁPIDO)
    ========================================================== */
 async function handleSubmit(event) {
     event.preventDefault();
     const form = event.target;
     const btn = form.querySelector('button[type="submit"]');
-    const originalText = btn.innerText;
     
-    btn.innerText = "A Enviar...";
+    btn.innerText = "Enviado...";
     btn.disabled = true;
 
     const data = new FormData(form);
-    const bodyClass = document.body.className;
+    const bodyClass = document.body.className.toLowerCase().trim();
 
-    try {
-        const response = await fetch(`https://formspree.io/f/${FORMSPREE_ID}`, {
-            method: 'POST',
-            body: data,
-            headers: { 'Accept': 'application/json' }
-        });
+    // 1. Define o destino com base na classe do body
+    let projeto = "geral";
+    if (bodyClass.includes('esporte')) projeto = "esporte";
+    else if (bodyClass.includes('midia')) projeto = "midia";
+    else if (bodyClass.includes('uniforca')) projeto = "uniforca";
+    else if (bodyClass.includes('atalaia')) projeto = "atalaia";
+    else if (bodyClass.includes('arcanjos')) projeto = "arcanjos";
+    else if (bodyClass.includes('universitarios')) projeto = "universitarios";
+    else if (bodyClass.includes('assistentes')) projeto = "assistentes";
+    else if (bodyClass.includes('cultura')) projeto = "cultura";
 
-        if (response.ok) {
-            // Lógica Unificada: Redireciona para obrigado.html com o parâmetro do projeto (?p=)
-            let projetoParam = "";
+    const destino = `./obrigado.html?p=${projeto}`;
 
-            if (bodyClass.includes('page-esporte')) projetoParam = "?p=esporte";
-            else if (bodyClass.includes('page-midia')) projetoParam = "?p=midia";
-            else if (bodyClass.includes('page-uniforca')) projetoParam = "?p=uniforca";
-            else if (bodyClass.includes('page-atalaia')) projetoParam = "?p=atalaia";
-            else if (bodyClass.includes('page-arcanjos')) projetoParam = "?p=arcanjos";
-            else if (bodyClass.includes('page-universitarios')) projetoParam = "?p=universitarios";
-            else if (bodyClass.includes('page-assistentes')) projetoParam = "?p=assistentes";
-            else if (bodyClass.includes('page-cultura')) projetoParam = "?p=cultura";
+    // 2. Dispara o envio para o Formspree (Sem esperar o await)
+    fetch(`https://formspree.io/f/${FORMSPREE_ID}`, {
+        method: 'POST',
+        body: data,
+        headers: { 'Accept': 'application/json' }
+    }).catch(err => console.log("Erro silencioso de envio:", err));
 
-            // Envia o usuário para a tela dinâmica
-            window.location.href = "obrigado.html" + projetoParam;
-            
-        } else {
-            const result = await response.json();
-            alert(result.error || "Erro no envio. Verifique se o formulário foi ativado no Formspree.");
-            btn.innerText = originalText;
-            btn.disabled = false;
-        }
-    } catch (error) {
-        alert("Ocorreu um erro ao enviar. Verifique sua conexão.");
-        btn.innerText = originalText;
-        btn.disabled = false;
-    }
+    // 3. REDIRECIONAMENTO FORÇADO (Após 500ms para garantir o disparo do fetch)
+    // Isso ignora se a internet está lenta ou se o Formspree demorar
+    setTimeout(() => {
+        window.location.replace(destino);
+    }, 500);
 }
 
 forms.forEach(form => {
@@ -156,7 +146,7 @@ function initMapaFJU() {
                 .bindPopup('<b>Você está aqui!</b><br><a href="https://www.google.com/maps/search/Igreja+Universal/@' + lat + ',' + lng + ',15z" target="_blank">Ver igrejas próximas</a>')
                 .openPopup();
         }, () => {
-            console.log("Acesso à localização negado pelo usuário.");
+            console.log("Localização negada.");
         });
     }
 }

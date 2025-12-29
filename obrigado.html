@@ -40,20 +40,21 @@
     </div>
 
     <script>
-        // Lógica para capturar o projeto via URL (Ex: obrigado.html?p=esporte)
+        // Captura e limpa o parâmetro da URL
         const urlParams = new URLSearchParams(window.location.search);
-        const projeto = urlParams.get('p');
+        const projetoRaw = urlParams.get('p');
+        const projeto = projetoRaw ? projetoRaw.toLowerCase().trim() : null;
 
         const informacoes = {
             'esporte': {
                 titulo: 'Nascido para Vencer!',
                 msg: 'Prepara as sapatilhas! O teu talento agora tem um propósito maior. Em breve entraremos em contacto para os treinos.',
-                img: 'img/ESPORTE.webp'
+                img: 'img/ESPORTES.webp'
             },
             'midia': {
                 titulo: 'Foco na Missão!',
                 msg: 'A tua criatividade vai ajudar a salvar muitas vidas. Nossa equipe de comunicação entrará em contacto para te integrar.',
-                img: 'img/MIDIA.webp'
+                img: 'img/MIDIA_1.webp'
             },
             'atalaia': {
                 titulo: 'Bem-vindo, Atalaia!',
@@ -78,7 +79,7 @@
             'assistentes': {
                 titulo: 'Servo por Amor!',
                 msg: 'Sua ajuda é fundamental para a FJU. Em breve estarás connosco na linha da frente servindo a quem precisa.',
-                img: 'img/ASSISTENTES.webp'
+                img: 'img/ASSISTENTES (1).webp'
             },
             'cultura': {
                 titulo: 'A Arte de Salvar!',
@@ -91,8 +92,18 @@
             const dados = informacoes[projeto];
             document.getElementById('titulo-dinamico').innerText = dados.titulo;
             document.getElementById('mensagem-dinamica').innerHTML = dados.msg;
-            document.getElementById('logo-projeto').innerHTML = `<img src="${dados.img}" alt="Logo" style="width: 140px; margin-bottom: 20px;">`;
-            document.title = "Inscrição Confirmada - " + projeto.toUpperCase();
+            
+            // Tenta carregar a imagem, se falhar, mantém o ícone de check
+            const imgElement = new Image();
+            imgElement.src = dados.img;
+            imgElement.style.width = "140px";
+            imgElement.style.marginBottom = "20px";
+            imgElement.onload = function() {
+                document.getElementById('logo-projeto').innerHTML = '';
+                document.getElementById('logo-projeto').appendChild(imgElement);
+            };
+            
+            document.title = "FJU - " + dados.titulo;
         }
     </script>
 </body>
