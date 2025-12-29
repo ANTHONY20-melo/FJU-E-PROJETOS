@@ -2735,3 +2735,67 @@ body.layout-sidebar {
         font-size: 1rem;
     }
 }
+/* ==========================================================
+    TEMA UNIFORÇA (AMARELO E PRETO)
+   ========================================================== */
+
+/* Ajuste do fundo da página e elementos principais */
+.page-uniforca {
+    background-color: #ffffff; /* Fundo claro para contrastar */
+}
+
+/* Nav Lateral ou Topo do Uniforça */
+.page-uniforca .projeto-panel-nav {
+    background: linear-gradient(180deg, #ffcc00 0%, #000000 100%) !important;
+}
+
+/* Hero Section (Destaque Principal) */
+.page-uniforca .hero {
+    background: linear-gradient(135deg, #ffcc00 0%, #1a1a1a 100%) !important;
+    color: #000 !important; /* Texto preto sobre o amarelo para leitura */
+}
+
+.page-uniforca .hero h1 span {
+    color: #020202;
+    text-shadow: 1px 1px 0px rgba(255,255,255,0.5);
+}
+
+/* Botão do Uniforça (Amarelo com texto preto) */
+.page-uniforca .btn-principal {
+    background: #ffcc00 !important;
+    color: #1b1b1b !important;
+    border: 2px solid #030303 !important;
+    font-weight: 800;
+}
+
+.page-uniforca .btn-principal:hover {
+    background: #0f0f0f !important;
+    color: #ffcc00 !important;
+    border-color: #ffcc00 !important;
+}
+
+/* Cards e Ícones */
+.page-uniforca .card i {
+    color: #ffcc00; /* Ícones amarelos */
+    background: #0a0a0a;  /* Fundo preto para o ícone brilhar */
+    padding: 15px;
+    border-radius: 50%;
+}
+
+/* Seção de Inscrição */
+.page-uniforca .form-box {
+    border-top: 5px solid #ffcc00;
+    background: #5e5e5e;
+    color: #fff;
+}
+
+.page-uniforca .btn-enviar-uniforca {
+    background: #ffcc00;
+    color: #0f0f0f;
+    font-weight: bold;
+    border: none;
+    padding: 12px;
+    width: 100%;
+    cursor: pointer;
+    text-transform: uppercase;
+}
